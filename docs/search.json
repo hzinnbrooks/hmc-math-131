@@ -1,0 +1,114 @@
+[
+  {
+    "objectID": "assignments.html",
+    "href": "assignments.html",
+    "title": "Assignments",
+    "section": "",
+    "text": "Assignments"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Math 131: Mathematical Analysis",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n\n\n\n\n\n\nTheorem 1 (Line) The equation of any straight line, called a linear equation, can be written as:\n\\[\ny = mx + b\n\\]\n\n\n\n\nSee Theorem 1."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "template.html#the-subsection",
+    "href": "template.html#the-subsection",
+    "title": "Lecture 2: Induction",
+    "section": "The subsection",
+    "text": "The subsection\nThis is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n\n\n\n\n\n\nTheorem 1 (Line) The equation of any straight line, called a linear equation, can be written as:\n\\[\ny = mx + b\n\\]\n\n\n\n\nSee Theorem 1."
+  },
+  {
+    "objectID": "syllabus.html",
+    "href": "syllabus.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "Syllabus"
+  },
+  {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Schedule and Topics",
+    "section": "",
+    "text": "Click the links below to view the topic materials for each lecture. The date listed is the lecture day, so you should read the materials and watch the videos before that date.\n\n\n\n\n\n\nLecture 2: Induction\n\n\n\n\n\nProof by induction is a popular and useful proof technique. Here at Harvey Mudd College, we encounter it in our very first week in Math 19. In this lecture, we’ll learn a little bit more about where this technique comes from and why it works, and we’ll encounter some style tips and pitfalls to avoid.\n\n\n\n\n\n\nAug 30, 2023\n\n\n\n\n\n\n\n\nLecture 3: Countability\n\n\n\n\n\nOur objective for this lecture is to develop a rigorous way to discuss sizes of sets. How can we tell if a set is finite or infinite? Are all infinite sets the same size? In order to do this, we first need to establish a mathematical framework for counting.\n\n\n\n\n\n\nSep 6, 2023\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "topics/induction.html",
+    "href": "topics/induction.html",
+    "title": "Lecture 2: Induction",
+    "section": "",
+    "text": "\\[\n\\def\\N{{\\mathbb{N}}}\n\\]"
+  },
+  {
+    "objectID": "topics/induction.html#the-natural-numbers",
+    "href": "topics/induction.html#the-natural-numbers",
+    "title": "Lecture 2: Induction",
+    "section": "The natural numbers",
+    "text": "The natural numbers\nWhat are the natural numbers? We can intuitively think of this set as the ‘counting numbers’ \\(\\N = \\{1, 2, 3, \\dots \\}\\). A set of axioms for the natural numbers comes from Giuseppe Peano (1889).\n\n\n\n\n\n\n\nDefinition 1 (The Peano Axioms) Let \\(\\N\\) be a set containing the element 1. Define a successor function \\(S: \\N \\to \\N\\), with the following requirements:\n\n\\(S(x) \\neq 1\\) for all \\(x \\in \\N.\\)\nIf \\(S(x) = S(y)\\) then \\(x=y\\) for all \\(x, y \\in \\N.\\)\nLet \\(A\\) be any subset of \\(\\N\\) which contains 1 and is closed under \\(S\\), so \\(S(x) \\in A\\) for all \\(x\\in A.\\)\n\nThen \\(A = \\N.\\)\n\n\n\n\nThe definition boils down to two ideas: there is a first element (1), and every element in the set has a successor in the set that is not 1. So, we can see that proof by induction is based on axiomatic properties of \\(\\N\\). You can start \\(\\N\\) with zero instead of 1. I’m not going to take a stance on this debate either way.\nThe principle of induction implies the well-ordering principle of \\(\\N:\\)\n\n\n\n\n\n\n\nDefinition 2 (The well-ordering principle) Every nonempty subset of \\(\\N\\) has a smallest element."
+  },
+  {
+    "objectID": "topics/induction.html#the-basics-of-proof-by-induction",
+    "href": "topics/induction.html#the-basics-of-proof-by-induction",
+    "title": "Lecture 2: Induction",
+    "section": "The basics of proof by induction",
+    "text": "The basics of proof by induction\nProof by induction is a way to prove infinitely many statements at once, given that these statements can be indexed by \\(n \\in \\N:\\) in other words, there’s a first statement, a second statement, a third statement, and so on.\nWe can formalize this a little more: if we let \\(P(n)\\) be a set of statements that are indexed by \\(n \\in \\N\\), then the goal is to show that \\(P(n)\\) is true for all \\(n.\\)\nHow proof by induction works:\nIf \\(S = \\{n: P(n) \\text{ is true}\\}\\), where \\(n \\in \\N\\), then \\(S\\) is a subset of \\(\\N\\). If our goal is to show that \\(P(n)\\) is true for all \\(n\\), this is equivalent to showing that \\(S=\\N.\\) To do this, we must show:\n\n\\(P(1)\\) is true. We call this the base case.\nIf \\(P(k)\\) is true then \\(P(k+1)\\) is true. We call this the inductive step, and the assumption that \\(P(k)\\) is true is called the inductive hypothesis. \n\nThe first condition says “There is a first element” and the second says “Every element has a successor”Then, because \\(S\\) satisfies the axioms, it must be that \\(S=\\N\\) and so we can conclude our statement \\(P(n)\\) is true for all \\(n.\\)"
+  },
+  {
+    "objectID": "topics/induction.html#strong-induction",
+    "href": "topics/induction.html#strong-induction",
+    "title": "Lecture 2: Induction",
+    "section": "Strong induction",
+    "text": "Strong induction\nThere is a twist on this proof technique that we call strong induction. To use strong induction, we must show:\n\nBase case: \\(P(1)\\) is true.\nInductive step: If \\(P(1), P(2), \\dots, P(k)\\) is true, then \\(P(k+1)\\) is true.\n\nNotice that the only difference is that we have modified the inductive hypothesis to assume that all statements up to statement \\(k\\) are true, instead of only assuming that the \\(k\\)th statement is true.\n\n\n\n\n\n\nWarning\n\n\n\nDespite the name, strong induction does not give you a ‘stronger’ result. You are still showing that \\(S\\) is the same as \\(\\N\\), so these techniques are in fact equivalent."
+  },
+  {
+    "objectID": "topics/induction.html#style-tips-for-proof-by-induction",
+    "href": "topics/induction.html#style-tips-for-proof-by-induction",
+    "title": "Lecture 2: Induction",
+    "section": "Style tips for proof by induction",
+    "text": "Style tips for proof by induction\n\nAt the beginning of your proof, inform your reader that it’s a proof by induction on ___, where you fill in the blank with your variable that will serve as an index.\nSeparate out your hypotheses: tell your reader when you’re doing the base case and when you’re doing the inductive step. Make your inductive hypothesis clear.\nRemind your reader of the conclusion at the end.\n\n\n\n\n\n\n\nIn-class activity\n\n\n\nIn some examples in lecture, we’ll put these style tips into practice."
+  },
+  {
+    "objectID": "topics/countability.html",
+    "href": "topics/countability.html",
+    "title": "Lecture 3: Countability",
+    "section": "",
+    "text": "If you want to learn how to count, I think I can point you to no better resource than The Count from Sesame Street:\nWhat is The Count actually doing when he counts? He is assigning a number from the set we described last class, the natural numbers \\(\\mathbb{N}\\), to each object. He is doing this in a systematic way, so that\nIn other words, he’s mapping the elements of his set (bats) to a subset of the natural numbers."
+  },
+  {
+    "objectID": "topics/countability.html#sets-and-cardinality",
+    "href": "topics/countability.html#sets-and-cardinality",
+    "title": "Lecture 3: Countability",
+    "section": "Sets and cardinality",
+    "text": "Sets and cardinality\n\n\n\n\n\n\n\nDefinition 1 (Cardinality) Suppose \\(J_n = \\{1, 2, \\dots, n\\} \\subset \\mathbb{N}.\\) Then, if \\(A\\) is in one-to-one correspondence with \\(J_n\\), then \\(A\\) {} \\(n\\) (equivalently \\(A\\) is size \\(n\\)). We denote this [ A = n.]\nIf \\(A\\) contains no elements, then it is not in one-to-one correspondence with any subset of \\(\\mathbb{N}\\); it is the empty set \\(\\emptyset\\) and \\(\\vert A \\vert = 0.\\)\n\n\n\n\nExample. Consider the set \\(A = \\{ 1, \\Delta, \\Pi, \\square \\}\\). We can create a bijection between \\(A\\) and \\(J_4\\), as follows: \\[\\begin{align*}\n    1 &\\mapsto 1 \\\\\n    \\Delta &\\mapsto 2 \\\\\n    \\Pi &\\mapsto 3 \\\\\n    \\square &\\mapsto 4 \\,\n\\end{align*}\\] Because we have created a bijection between our set and \\(J_4\\), we say that \\(\\vert A \\vert = 4.\\)\nUnfortunately (or perhaps fortunately?), it is not possible to assign every set a natural number in this way.\n\n\n\n\n\n\n\nDefinition 2 (Finite and infinite) We say a set is finite is \\(A\\) is in one-to-one correspondence with \\(J_n.\\) Otherwise, we say \\(A\\) is infinite."
+  },
+  {
+    "objectID": "topics/countability.html#countable-sets",
+    "href": "topics/countability.html#countable-sets",
+    "title": "Lecture 3: Countability",
+    "section": "Countable sets",
+    "text": "Countable sets\n\n\n\n\n\n\n\nDefinition 3 We say a set \\(A\\) is countable if \\(A\\) is in one-to-one correspondence with \\(\\mathbb{N}.\\)\n\n\n\n\n\n\n\n\n\n\nIn-class activity\n\n\n\nIn class, we will consider some examples. The goal is either to construct a bijection, or prove that there is no bijection.\n\n\n\n\n\n\n\n\n\nTheorem 1 Every infinite subset of a countable set is countable.\n\n\nProof. Suppose \\(A\\) is a countable set. Because \\(A\\) is countable, there is a bijection between \\(A\\) and \\(\\mathbb{N}\\), and we can label the elements of \\(A\\) as a sequence indexed by \\(\\mathbb{N}\\): \\(A = \\{x_1, x_2, \\dots\\}.\\)\nNow consider \\(E \\subset A.\\) By the well-ordering property of \\(\\mathbb{N}\\) there is an element of \\(E\\) with the smallest index. Call this index \\(n_1.\\) Proceeding in this manner, if we have labeled the \\(k-1\\) smallest indices as \\(\\{n_1, n_2, \\dots, n_{k-1}\\},\\) then what remains unlabeled is still indexed by a subset of \\(N\\) and there is an element with the smallest index that we may call \\(n_k.\\)\nTo be more explicit about the notation here , we know that the elements of \\(E\\) are indexed by a subset of \\(N\\) that we have labeled \\(\\{n_1, n_2, ...\\}\\), so we can write \\[ E = \\{x_{n_1}, x_{n_2}, x_{n_3}, \\dots \\} \\,. \\]\nThis process creates the bijection \\(f(k) = x_{n_k}\\) between \\(E\\) and \\(\\mathbb{N}\\), and we can conclude \\(E\\) is countable. \\(\\square\\)\n\n\n\n\nThis theorem might be surprising to you: intuitively it might feel like a proper subset should be a “smaller” set and contain fewer elements. With finite sets, this is true … but infinity is different! In our quest to construct a “bigger” infinite set than \\(\\mathbb{N}\\), we might try to combine countably many countable sets, but the next theorem shows that such a set would still be countable.\n\n\n\n\n\n\n\nTheorem 2 (Hilbert’s Hotel) The union of a countable set of countable sets is countable.\n\n\nProof. Let \\(S\\) be a countable set of countable sets. Because \\(S\\) is countable, we can write this set as a sequence of the countable sets it contains: \\(E = \\{E_1, E_2, \\dots \\},\\) or equivalently,\n\\[\nS = \\bigcup_{n=1}^\\infty E_n \\,.\n\\]\nRemember, each \\(E_n\\) is itself a countable set. We can denote \\(E_1 = \\{ x_{11}, x_{12}, x_{13}, \\dots\\}\\), and so on. We can use this notation to write all of the elements of \\(S\\) in an infinite array\n\\[ \\begin{array}{cccc}\nx_{11} & x_{12} & x_{13} & \\dots \\\\\nx_{21} & x_{22} & x_{23} & \\dots \\\\\nx_{31} & x_{32} & x_{33} & \\dots \\\\\n\\vdots\n\\end{array}\\]\nso that the \\(n\\)th row contains the elements of the \\(n\\)th set in \\(S\\). We can use this array to create a bijection between \\(S\\) and \\(\\mathbb{N}\\) by following along the diagonals of our array: \\[\\begin{align}\nx_{11} &\\mapsto 1 \\\\\nx_{21} &\\mapsto 2 \\\\\nx_{12} &\\mapsto 3 \\\\\nx_{31} &\\mapsto 4 \\\\\nx_{22} &\\mapsto 5 \\\\\n\\vdots\n\\end{align}\\] It remains to convince ourselves that this is, in fact, a bijection: every element in our array is assigned to one (and only one) natural number.  Having constructed this bijection, we can see that the set \\(S = \\{x_{11}, x_{21}, x_{12}, \\dots \\}\\) of countable sets is countable. \\(\\square\\)\n\n\n\n\nWriting down this bijection explicitly can be surprisingly tricky!An application of this theorem allows us to see that even the rational numbers are countable! This means we can use the ‘Hilbert’s Hotel’ method to create a bijection between the rational numbers and the natural numbers.\n\n\n\n\n\n\nIn-class activity\n\n\n\nProve that the rational numbers \\(\\mathbb{Q}\\) are countable.\n\n\nAt this point, it might start to feel like all infinite sets are countable and therefore the ``same size.’’ Is this true? Are there examples of uncountable sets?"
+  },
+  {
+    "objectID": "topics/countability.html#uncountable-sets",
+    "href": "topics/countability.html#uncountable-sets",
+    "title": "Lecture 3: Countability",
+    "section": "Uncountable sets",
+    "text": "Uncountable sets\n\n\n\n\n\n\n\nTheorem 3 (Cantor’s diagonalization argument) The set \\((0,1) \\subset \\mathbb{R}\\) is uncountable.\n\n\nProof. We proceed by constructing an arbitrary function \\(f: \\mathbb{N}\\to (0,1)\\) \\[\\begin{align*}\n1 &\\mapsto 0.x_{11}x_{12}x_{13} \\dots \\\\\n2 &\\mapsto 0.x_{21}x_{22}x_{23} \\dots \\\\\n3 &\\mapsto 0.x_{31}x_{32}x_{33} \\dots \\\\\n\\vdots &\n\\end{align*}\\] where we represent these quantities using their decimal expansions. We show by construction that any proposed mapping \\(f\\) cannot be onto. Construct the real number \\(r = 0.r_{1}r_{2}r_{3} \\dots\\) by setting \\[\nr_i = \\begin{cases}\n1 & \\text{ if } x_{ii} \\neq 1, \\\\\n2 & \\text{if } x_{ii} = 1.\n\\end{cases}\n\\] In other words, this real number \\(r\\) has a decimal expansion containing a sequence of 1’s and 2’s and is different from \\(f(k)\\) at the \\(k\\)th decimal place for all \\(k\\), and thus is not in the range of any \\(f\\) we might propose. We can conclude that there is no bijective function \\(f: \\mathbb{N}\\to (0,1)\\), and thus \\((0,1)\\) is uncountable. \\(\\square\\)\n\n\n\n\n\n\n\n\n\n\nIn-class activity\n\n\n\nProve that \\(\\mathbb{R}\\) is uncountable.\n\n\nThis is an exciting discovery: the real numbers are an infinite set that is, in some sense, “bigger” than the other infinite sets we’ve encountered thus far. Why stop there? Are there infinite sets that are even “bigger” than the real numbers?"
+  },
+  {
+    "objectID": "topics/countability.html#cantors-theorem-cardinalities-and-the-continuum-hypothesis",
+    "href": "topics/countability.html#cantors-theorem-cardinalities-and-the-continuum-hypothesis",
+    "title": "Lecture 3: Countability",
+    "section": "Cantor’s Theorem, Cardinalities, and the Continuum Hypothesis",
+    "text": "Cantor’s Theorem, Cardinalities, and the Continuum Hypothesis\n\n\n\n\n\n\n\nDefinition 4 (Power set) The power set \\(P(A)\\) of a set \\(A\\) is the set of all subsets of \\(A\\).\n\n\n\n\n\n\n\n\n\n\n\nTheorem 4 (Cantor’s theorem) There is a function \\(f: A \\to P(A)\\) that is injective, but there is no such surjective function. That is, \\(A\\) is not in one-to-one correspondence with its power set \\(P(A),\\) and cardinality \\(A <\\) cardinality \\(P(A)\\).\n\n\nProof. Note that the function \\(f: A \\to P(A)\\) with \\(f(x)=x\\) is injective, thus confirming the existence of an injective function between a set and its power set.\nNow, it remains to show that any function \\(g:A \\to P(A)\\) is not surjective.\nFor contradiction, suppose that \\(g\\) is surjective. We construct a set \\(B = \\{x \\in A: x \\notin g(x)\\},\\) in other words, \\(B\\) is the set of all elements of \\(A\\) whose images do not include themselves. This set is a subset of \\(A\\), and thus is in \\(P(A).\\) From this, we can conclude two things:\n\nBy the definition of \\(B\\), an element \\(y \\in B\\) if and only if \\(y \\notin g(y).\\)\nSince \\(g\\) is surjective, then \\(g(y) = B\\) for some \\(y \\in A.\\) This element \\(y \\in B\\) if and only if \\(y \\in g(y).\\)\n\nHere we have a contradiction, and so we conclude that \\(g\\) cannot be surjective. \\(\\square\\)\n\n\n\n\nNotice that the surjective portion of the previous proof presented here is a slick way of writing a diagonalization argument: we constructed a set \\(B \\in P(A)\\) which is not the output of any surjective function \\(f\\).\nThis theorem tells us that there is a ``bigger” set than \\(\\mathbb{R}\\), which is \\(P(\\mathbb{R})\\). This theorem has an even more delightful consequence: there is no biggest set, and it is not possible to construct a set of all sets. If it were, then the set of all sets would have to contain its own power set, but we have just shown that the power set of the set of all sets would have to be bigger.\nSo, we now know that there are infinitely-many sizes of infinities, with \\[\n\\text{ cardinality }\\mathbb{N}< \\text{ cardinality }\\mathbb{R}< \\text{ cardinality }P(\\mathbb{R}) < \\dots,\n\\] but is there a size of infinity between \\(\\mathbb{N}\\) and \\(\\mathbb{R}\\)?\n\n\n\n\n\n\n\nDefinition 5 (Continuum hypothesis (Cantor)) There is no set whose cardinality is strictly between that of the integers and the real numbers.\n\n\n\n\nThe continuum hypothesis is undecidable: Gödel proved that there was no way to disprove the continuum hypothesis (1940), and Cohen showed that is was also impossible to prove it (1963). This means that one can either accept or reject the continuum hypothesis and no logical contradictions will arise in either case."
+  }
+]
