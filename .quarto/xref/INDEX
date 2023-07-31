@@ -1,0 +1,32 @@
+{
+  "index.qmd": {
+    "index.html": "85400f6b"
+  },
+  "about.qmd": {
+    "about.html": "e9b3cf0d"
+  },
+  "syllabus.qmd": {
+    "syllabus.html": "f29dbfda"
+  },
+  "schedule.qmd": {
+    "schedule.html": "ead9a32c"
+  },
+  "induction.qmd": {
+    "induction.html": "f373929c"
+  },
+  "topics/induction.qmd": {
+    "induction.html": "782ac857"
+  },
+  "topics/countability.qmd": {
+    "countability.html": "d542d733"
+  },
+  "macros.qmd": {
+    "macros.html": "676e1086"
+  },
+  "template.qmd": {
+    "template.html": "445b46e7"
+  },
+  "assignments.qmd": {
+    "assignments.html": "192f8333"
+  }
+}

@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.475">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Heather Zinn Brooks">
+<meta name="description" content="Our objective for this lecture is to develop a rigorous way to discuss sizes of sets. How can we tell if a set is finite or infinite? Are all infinite sets the same size? In order to do this, we first need to establish a mathematical framework for counting.">
+
+<title>Math 131: Mathematical Analysis - Lecture 3: Countability</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Lecture 3: Countability</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Math 131: Mathematical Analysis</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../syllabus.html" class="sidebar-item-text sidebar-link">Syllabus</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule.html" class="sidebar-item-text sidebar-link">Schedule and Topics</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignments.html" class="sidebar-item-text sidebar-link">Assignments</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#sets-and-cardinality" id="toc-sets-and-cardinality" class="nav-link active" data-scroll-target="#sets-and-cardinality">Sets and cardinality</a></li>
+  <li><a href="#countable-sets" id="toc-countable-sets" class="nav-link" data-scroll-target="#countable-sets">Countable sets</a></li>
+  <li><a href="#uncountable-sets" id="toc-uncountable-sets" class="nav-link" data-scroll-target="#uncountable-sets">Uncountable sets</a></li>
+  <li><a href="#cantors-theorem-cardinalities-and-the-continuum-hypothesis" id="toc-cantors-theorem-cardinalities-and-the-continuum-hypothesis" class="nav-link" data-scroll-target="#cantors-theorem-cardinalities-and-the-continuum-hypothesis">Cantor’s Theorem, Cardinalities, and the Continuum Hypothesis</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Lecture 3: Countability</h1>
+</div>
+
+<div>
+  <div class="description">
+    Our objective for this lecture is to develop a rigorous way to discuss sizes of sets. How can we tell if a set is finite or infinite? Are all infinite sets the same size? In order to do this, we first need to establish a mathematical framework for counting.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Heather Zinn Brooks </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Lecture Date</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">Wed 06 September 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="hidden">
+
+</div>
+<p>If you want to learn how to count, I think I can point you to no better resource than The Count from Sesame Street:</p>
+<div class="quarto-video ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/2AoxCkySv34" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p>What is The Count actually doing when he counts? He is assigning a number from the set we described last class, the natural numbers <span class="math inline">\(\mathbb{N}\)</span>, to each object. He is doing this in a systematic way, so that</p>
+<ul>
+<li>Each element will be included, and</li>
+<li>Each element is included only once.</li>
+</ul>
+<p><img src="../figures/counting-bats.png" class="img-fluid" style="width:50.0%"></p>
+<p>In other words, he’s mapping the elements of his set (bats) to a subset of the natural numbers.</p>
+<section id="sets-and-cardinality" class="level2">
+<h2 class="anchored" data-anchor-id="sets-and-cardinality">Sets and cardinality</h2>
+<div class="callout-note callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-cardinality" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 1 (Cardinality) </strong></span>Suppose <span class="math inline">\(J_n = \{1, 2, \dots, n\} \subset \mathbb{N}.\)</span> Then, if <span class="math inline">\(A\)</span> is in one-to-one correspondence with <span class="math inline">\(J_n\)</span>, then <span class="math inline">\(A\)</span> {} <span class="math inline">\(n\)</span> (equivalently <span class="math inline">\(A\)</span> is size <span class="math inline">\(n\)</span>). We denote this [ A = n.]</p>
+<p>If <span class="math inline">\(A\)</span> contains no elements, then it is not in one-to-one correspondence with any subset of <span class="math inline">\(\mathbb{N}\)</span>; it is the empty set <span class="math inline">\(\emptyset\)</span> and <span class="math inline">\(\vert A \vert = 0.\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><strong>Example.</strong> Consider the set <span class="math inline">\(A = \{ 1, \Delta, \Pi, \square \}\)</span>. We can create a bijection between <span class="math inline">\(A\)</span> and <span class="math inline">\(J_4\)</span>, as follows: <span class="math display">\[\begin{align*}
+    1 &amp;\mapsto 1 \\
+    \Delta &amp;\mapsto 2 \\
+    \Pi &amp;\mapsto 3 \\
+    \square &amp;\mapsto 4 \,
+\end{align*}\]</span> Because we have created a bijection between our set and <span class="math inline">\(J_4\)</span>, we say that <span class="math inline">\(\vert A \vert = 4.\)</span></p>
+<p>Unfortunately (or perhaps fortunately?), it is not possible to assign every set a natural number in this way.</p>
+<div class="callout-note callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-finite" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 2 (Finite and infinite) </strong></span>We say a set is <strong>finite</strong> is <span class="math inline">\(A\)</span> is in one-to-one correspondence with <span class="math inline">\(J_n.\)</span> Otherwise, we say <span class="math inline">\(A\)</span> is <strong>infinite</strong>.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="countable-sets" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="countable-sets">Countable sets</h2>
+<div class="callout-note callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-countable" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 3 </strong></span>We say a set <span class="math inline">\(A\)</span> is <strong>countable</strong> if <span class="math inline">\(A\)</span> is in one-to-one correspondence with <span class="math inline">\(\mathbb{N}.\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout-important callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+In-class activity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In class, we will consider some examples. The goal is either to construct a bijection, or prove that there is no bijection.</p>
+</div>
+</div>
+<div class="callout-note callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="thm-countablesubsets" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 1 </strong></span>Every infinite subset of a countable set is countable.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Suppose <span class="math inline">\(A\)</span> is a countable set. Because <span class="math inline">\(A\)</span> is countable, there is a bijection between <span class="math inline">\(A\)</span> and <span class="math inline">\(\mathbb{N}\)</span>, and we can label the elements of <span class="math inline">\(A\)</span> as a sequence indexed by <span class="math inline">\(\mathbb{N}\)</span>: <span class="math inline">\(A = \{x_1, x_2, \dots\}.\)</span></p>
+<p>Now consider <span class="math inline">\(E \subset A.\)</span> By the well-ordering property of <span class="math inline">\(\mathbb{N}\)</span> there is an element of <span class="math inline">\(E\)</span> with the smallest index. Call this index <span class="math inline">\(n_1.\)</span> Proceeding in this manner, if we have labeled the <span class="math inline">\(k-1\)</span> smallest indices as <span class="math inline">\(\{n_1, n_2, \dots, n_{k-1}\},\)</span> then what remains unlabeled is still indexed by a subset of <span class="math inline">\(N\)</span> and there is an element with the smallest index that we may call <span class="math inline">\(n_k.\)</span></p>
+<p>To be more explicit about the notation here , we know that the elements of <span class="math inline">\(E\)</span> are indexed by a subset of <span class="math inline">\(N\)</span> that we have labeled <span class="math inline">\(\{n_1, n_2, ...\}\)</span>, so we can write <span class="math display">\[ E = \{x_{n_1}, x_{n_2}, x_{n_3}, \dots \} \,. \]</span></p>
+<p>This process creates the bijection <span class="math inline">\(f(k) = x_{n_k}\)</span> between <span class="math inline">\(E\)</span> and <span class="math inline">\(\mathbb{N}\)</span>, and we can conclude <span class="math inline">\(E\)</span> is countable. <span class="math inline">\(\square\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<p>This theorem might be surprising to you: intuitively it might feel like a proper subset should be a “smaller” set and contain fewer elements. With finite sets, this is true … but infinity is different! In our quest to construct a “bigger” infinite set than <span class="math inline">\(\mathbb{N}\)</span>, we might try to combine countably many countable sets, but the next theorem shows that such a set would still be countable.</p>
+<div class="callout-note callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="thm-hilberthotel" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 2 (Hilbert’s Hotel) </strong></span>The union of a countable set of countable sets is countable.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\(S\)</span> be a countable set of countable sets. Because <span class="math inline">\(S\)</span> is countable, we can write this set as a sequence of the countable sets it contains: <span class="math inline">\(E = \{E_1, E_2, \dots \},\)</span> or equivalently,</p>
+<p><span class="math display">\[
+S = \bigcup_{n=1}^\infty E_n \,.
+\]</span></p>
+<p>Remember, each <span class="math inline">\(E_n\)</span> is itself a countable set. We can denote <span class="math inline">\(E_1 = \{ x_{11}, x_{12}, x_{13}, \dots\}\)</span>, and so on. We can use this notation to write all of the elements of <span class="math inline">\(S\)</span> in an infinite array</p>
+<p><span class="math display">\[ \begin{array}{cccc}
+x_{11} &amp; x_{12} &amp; x_{13} &amp; \dots \\
+x_{21} &amp; x_{22} &amp; x_{23} &amp; \dots \\
+x_{31} &amp; x_{32} &amp; x_{33} &amp; \dots \\
+\vdots
+\end{array}\]</span></p>
+<p>so that the <span class="math inline">\(n\)</span>th row contains the elements of the <span class="math inline">\(n\)</span>th set in <span class="math inline">\(S\)</span>. We can use this array to create a bijection between <span class="math inline">\(S\)</span> and <span class="math inline">\(\mathbb{N}\)</span> by following along the diagonals of our array: <span class="math display">\[\begin{align}
+x_{11} &amp;\mapsto 1 \\
+x_{21} &amp;\mapsto 2 \\
+x_{12} &amp;\mapsto 3 \\
+x_{31} &amp;\mapsto 4 \\
+x_{22} &amp;\mapsto 5 \\
+\vdots
+\end{align}\]</span> It remains to convince ourselves that this is, in fact, a bijection: every element in our array is assigned to one (and only one) natural number.  Having constructed this bijection, we can see that the set <span class="math inline">\(S = \{x_{11}, x_{21}, x_{12}, \dots \}\)</span> of countable sets is countable. <span class="math inline">\(\square\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="no-row-height column-margin column-container"><span class="callout-margin-content callout-margin-content-simple">Writing down this bijection explicitly can be surprisingly tricky!</span></div><p>An application of this theorem allows us to see that even the rational numbers are countable! This means we can use the ‘Hilbert’s Hotel’ method to create a bijection between the rational numbers and the natural numbers.</p>
+<div class="callout-important callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+In-class activity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Prove that the rational numbers <span class="math inline">\(\mathbb{Q}\)</span> are countable.</p>
+</div>
+</div>
+<p>At this point, it might start to feel like all infinite sets are countable and therefore the ``same size.’’ Is this true? Are there examples of uncountable sets?</p>
+</section>
+<section id="uncountable-sets" class="level2">
+<h2 class="anchored" data-anchor-id="uncountable-sets">Uncountable sets</h2>
+<div class="callout-note callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="thm-cantordiagonalization" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 3 (Cantor’s diagonalization argument) </strong></span>The set <span class="math inline">\((0,1) \subset \mathbb{R}\)</span> is uncountable.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>We proceed by constructing an arbitrary function <span class="math inline">\(f: \mathbb{N}\to (0,1)\)</span> <span class="math display">\[\begin{align*}
+1 &amp;\mapsto 0.x_{11}x_{12}x_{13} \dots \\
+2 &amp;\mapsto 0.x_{21}x_{22}x_{23} \dots \\
+3 &amp;\mapsto 0.x_{31}x_{32}x_{33} \dots \\
+\vdots &amp;
+\end{align*}\]</span> where we represent these quantities using their decimal expansions. We show by construction that any proposed mapping <span class="math inline">\(f\)</span> cannot be onto. Construct the real number <span class="math inline">\(r = 0.r_{1}r_{2}r_{3} \dots\)</span> by setting <span class="math display">\[
+r_i = \begin{cases}
+1 &amp; \text{ if } x_{ii} \neq 1, \\
+2 &amp; \text{if } x_{ii} = 1.
+\end{cases}
+\]</span> In other words, this real number <span class="math inline">\(r\)</span> has a decimal expansion containing a sequence of 1’s and 2’s and is different from <span class="math inline">\(f(k)\)</span> at the <span class="math inline">\(k\)</span>th decimal place for all <span class="math inline">\(k\)</span>, and thus is not in the range of any <span class="math inline">\(f\)</span> we might propose. We can conclude that there is no bijective function <span class="math inline">\(f: \mathbb{N}\to (0,1)\)</span>, and thus <span class="math inline">\((0,1)\)</span> is uncountable. <span class="math inline">\(\square\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout-important callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+In-class activity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Prove that <span class="math inline">\(\mathbb{R}\)</span> is uncountable.</p>
+</div>
+</div>
+<p>This is an exciting discovery: the real numbers are an infinite set that is, in some sense, “bigger” than the other infinite sets we’ve encountered thus far. Why stop there? Are there infinite sets that are even “bigger” than the real numbers?</p>
+</section>
+<section id="cantors-theorem-cardinalities-and-the-continuum-hypothesis" class="level2">
+<h2 class="anchored" data-anchor-id="cantors-theorem-cardinalities-and-the-continuum-hypothesis">Cantor’s Theorem, Cardinalities, and the Continuum Hypothesis</h2>
+<div class="callout-note callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-powerset" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 4 (Power set) </strong></span>The power set <span class="math inline">\(P(A)\)</span> of a set <span class="math inline">\(A\)</span> is the set of all subsets of <span class="math inline">\(A\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout-note callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="thm-cantorthm" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 4 (Cantor’s theorem) </strong></span>There is a function <span class="math inline">\(f: A \to P(A)\)</span> that is injective, but there is no such surjective function. That is, <span class="math inline">\(A\)</span> is not in one-to-one correspondence with its power set <span class="math inline">\(P(A),\)</span> and cardinality <span class="math inline">\(A &lt;\)</span> cardinality <span class="math inline">\(P(A)\)</span>.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Note that the function <span class="math inline">\(f: A \to P(A)\)</span> with <span class="math inline">\(f(x)=x\)</span> is injective, thus confirming the existence of an injective function between a set and its power set.</p>
+<p>Now, it remains to show that any function <span class="math inline">\(g:A \to P(A)\)</span> is not surjective.</p>
+<p>For contradiction, suppose that <span class="math inline">\(g\)</span> is surjective. We construct a set <span class="math inline">\(B = \{x \in A: x \notin g(x)\},\)</span> in other words, <span class="math inline">\(B\)</span> is the set of all elements of <span class="math inline">\(A\)</span> whose images do not include themselves. This set is a subset of <span class="math inline">\(A\)</span>, and thus is in <span class="math inline">\(P(A).\)</span> From this, we can conclude two things:</p>
+<ul>
+<li>By the definition of <span class="math inline">\(B\)</span>, an element <span class="math inline">\(y \in B\)</span> if and only if <span class="math inline">\(y \notin g(y).\)</span></li>
+<li>Since <span class="math inline">\(g\)</span> is surjective, then <span class="math inline">\(g(y) = B\)</span> for some <span class="math inline">\(y \in A.\)</span> This element <span class="math inline">\(y \in B\)</span> if and only if <span class="math inline">\(y \in g(y).\)</span></li>
+</ul>
+<p>Here we have a contradiction, and so we conclude that <span class="math inline">\(g\)</span> cannot be surjective. <span class="math inline">\(\square\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<p>Notice that the surjective portion of the previous proof presented here is a slick way of writing a diagonalization argument: we constructed a set <span class="math inline">\(B \in P(A)\)</span> which is not the output of any surjective function <span class="math inline">\(f\)</span>.</p>
+<p>This theorem tells us that there is a ``bigger” set than <span class="math inline">\(\mathbb{R}\)</span>, which is <span class="math inline">\(P(\mathbb{R})\)</span>. This theorem has an even more delightful consequence: there is no biggest set, and it is not possible to construct a set of all sets. If it were, then the set of all sets would have to contain its own power set, but we have just shown that the power set of the set of all sets would have to be bigger.</p>
+<p>So, we now know that there are infinitely-many sizes of infinities, with <span class="math display">\[
+\text{ cardinality }\mathbb{N}&lt; \text{ cardinality }\mathbb{R}&lt; \text{ cardinality }P(\mathbb{R}) &lt; \dots,
+\]</span> but is there a size of infinity between <span class="math inline">\(\mathbb{N}\)</span> and <span class="math inline">\(\mathbb{R}\)</span>?</p>
+<div class="callout-note callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-continuumhypothesis" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 5 (Continuum hypothesis (Cantor)) </strong></span>There is no set whose cardinality is strictly between that of the integers and the real numbers.</p>
+</div>
+</div>
+</div>
+</div>
+<p>The continuum hypothesis is <strong>undecidable</strong>: Gödel proved that there was no way to disprove the continuum hypothesis (1940), and Cohen showed that is was also impossible to prove it (1963). This means that one can either accept or reject the continuum hypothesis and no logical contradictions will arise in either case.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

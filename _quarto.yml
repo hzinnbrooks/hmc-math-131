@@ -1,0 +1,30 @@
+project:
+  type: website
+
+website:
+  title: "Math 131: Mathematical Analysis"
+  #navbar:
+    #left:
+      #- href: index.qmd
+      #  text: Home
+      #- about.qmd
+  sidebar: 
+    style: docked  
+    search: true
+    background: palevioletred
+    contents:
+      - syllabus.qmd
+      - schedule.qmd
+      - assignments.qmd
+
+
+format:
+  html:
+    theme: litera
+    css: styles.css
+    toc: true
+    linkcolor: palevioletred
+    
+
+
+

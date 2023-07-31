@@ -1,0 +1,14 @@
+---
+title: "Schedule and Topics"
+listing:
+  id: topic-listings
+  contents: topics
+  sort: "date asc"
+  type: default
+  fields: [date, title, description]
+---
+
+Click the links below to view the topic materials for each lecture. The date listed is the lecture day, so you should read the materials and watch the videos before that date.
+
+::: {#topic-listings}
+:::

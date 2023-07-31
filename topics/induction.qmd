@@ -1,0 +1,93 @@
+---
+title: "Lecture 2: Induction"
+date: 08/30/2023
+date-format: "ddd DD MMMM YYYY"
+published-title: Lecture Date
+author: Heather Zinn Brooks
+description: "Proof by induction is a popular and useful proof technique. Here at Harvey Mudd College, we encounter it in our very first week in Math 19. In this lecture, we'll learn a little bit more about where this technique comes from and why it works, and we'll encounter some style tips and pitfalls to avoid."
+---
+
+::: {.hidden}
+$$
+ \def\N{{\mathbb{N}}}
+$$
+:::
+
+## The natural numbers 
+
+What are the natural numbers? We can intuitively think of this set as the 'counting numbers'  $\N = \{1, 2, 3, \dots \}$. A set of axioms for the natural numbers comes from Giuseppe Peano (1889).
+
+::: {.callout-note icon=false appearance="minimal"}
+::: {#def-peano}
+
+## The Peano Axioms
+
+Let $\N$ be a set containing the element 1. Define a successor function $S: \N \to \N$, with the following requirements:
+
+ - $S(x) \neq 1$ for all $x \in \N.$ 
+ - If $S(x) = S(y)$ then $x=y$ for all $x, y \in \N.$ 
+ - Let $A$ be any subset of $\N$ which contains 1 and is closed under $S$, so $S(x) \in A$ for all $x\in A.$ 	
+
+ Then $A = \N.$ 
+
+:::
+:::
+
+The definition boils down to two ideas: there is a first element (1), and every element in the set has a successor in the set that is not 1. So, we can see that proof by induction is based on axiomatic properties of $\N$.
+[You can start $\N$ with zero instead of 1. I'm not going to take a stance on this debate either way.]{.aside}
+
+The principle of induction implies the **well-ordering principle** of $\N:$ 
+
+::: {.callout-note icon=false appearance="minimal"}
+::: {#def-wellordering}
+
+## The well-ordering principle
+
+Every nonempty subset of $\N$ has a smallest element.
+
+:::
+:::
+
+## The basics of proof by induction
+
+Proof by induction is a way to prove infinitely many statements at once, given that these statements can be indexed by $n \in \N:$ in other words, there's a first statement, a second statement, a third statement, and so on.
+
+We can formalize this a little more: if we let $P(n)$ be a set of statements that are indexed by $n \in \N$, then the goal is to show that $P(n)$ is true for all $n.$
+
+**How proof by induction works:**
+
+If $S = \{n: P(n) \text{ is true}\}$, where $n \in \N$, then $S$ is a subset of $\N$. If our goal is to show that $P(n)$ is true for all $n$, this is equivalent to showing that $S=\N.$
+To do this, we must show:
+
+1. $P(1)$ is true. We call this the **base case**. 
+2. If $P(k)$ is true then $P(k+1)$ is true. We call this the **inductive step**, and the assumption that $P(k)$ is true is called the **inductive hypothesis**. 
+[The first condition says "*There is a first element*" and the second says "*Every element has a successor*"]{.aside}
+
+Then, because $S$ satisfies the axioms, it must be that $S=\N$ and so we can conclude our statement $P(n)$ is true for all $n.$
+
+## Strong induction
+
+There is a twist on this proof technique that we call **strong induction**. To use strong induction, we must show:
+
+- **Base case:** $P(1)$ is true.
+- **Inductive step:** If $P(1), P(2), \dots, P(k)$ is true, then $P(k+1)$ is true.
+
+Notice that the only difference is that we have modified the inductive hypothesis to assume that all statements up to statement $k$ are true, instead of only assuming that the $k$th statement is true.
+
+::: {.callout-warning}
+
+Despite the name, strong induction does not give you a 'stronger' result. You are still showing that $S$ is the same as $\N$, so these techniques are in fact equivalent.
+
+:::
+
+## Style tips for proof by induction
+
+- At the beginning of your proof, inform your reader that it's a proof by induction on ___, where you fill in the blank with your variable that will serve as an index.
+- Separate out your hypotheses: tell your reader when you're doing the base case and when you're doing the inductive step. Make your inductive hypothesis clear.
+- Remind your reader of the conclusion at the end.
+
+::: {.callout-important icon=false appearance="minimal"}
+## In-class activity
+In some examples in lecture, we'll put these style tips into practice.
+:::
+
