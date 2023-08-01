@@ -3,7 +3,8 @@
     "listing": "/schedule.html",
     "items": [
       "/topics/induction.html",
-      "/topics/countability.html"
+      "/topics/countability.html",
+      "/topics/metricspaces.html"
     ]
   }
 ]

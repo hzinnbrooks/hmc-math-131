@@ -1,0 +1,155 @@
+---
+title: "Lecture 5: Metric Spaces, Neighborhoods, and Limit Points"
+date: 09/13/2023
+date-format: "ddd DD MMMM YYYY"
+published-title: Lecture Date
+author: Heather Zinn Brooks
+description: "Now that we know how to describe the size of sets (even infinite ones) and we know how to talk about ordering and biggest and smallest elements, we are ready to continue our exploration of sets with another question: when is it possible to measure distance in a set?"
+---
+
+::: {.hidden}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+:::
+
+THIS PAGE IS STILL IN PROGRESS
+
+## Introduction to metric spaces
+
+We call sets that have a notion of distance **metric spaces**.
+
+::: {.callout-note icon=false appearance="minimal"}
+::: {#def-metricspace}
+## Metric Space
+A set $X$ is a **metric space** if there exists a **metric** $d:X \times X \to \R$ such that for all $p, q, r \in X$, the following three conditions are satisfied.
+
+1. Nonnegativity: $d(p,q) \geq 0,$ with $d= 0$ if and only if $p=q.$
+2. Symmetry: $d(p,q) = d(q,p)$.
+3. Triangle Inequality: $d(p,q) \leq d(p,r) + d(r,q).$
+
+:::
+:::
+
+::: {.callout-important icon=false appearance="minimal"}
+## In-class activity
+In class, we will explore some examples of sets to determine whether or not they are metric spaces.
+:::
+
+In this activity, we'll focus on common mathematical sets that you're familiar with. However, metric spaces could show up in all kinds of applications: A set of nodes in a tree graph, a set of genetic sequences, or even a set of functions with particular properties can be metric spaces if you define a metric appropriately. Can you think of possible metrics for these sets?
+
+## Neighborhoods
+
+Once we know we are working in a metric space, we have a way to define distances between points, which are elements in your set. It is useful to be able to talk about which points are closer to other points. If we have a metric space $X$ with metric $d(x,y)$, we can do this with the notion of a neighborhood (sometimes called an open ball).
+
+::: {.callout-note icon=false appearance="minimal"}
+::: {#def-neighborhood}
+## Neighborhood/open ball and closed ball
+A **neighborhood** of radius $r$ (or **open ball** of radius $r$) is the set $N_r(x) = \{y: d(x,y) < r \}.$ 
+	
+A **closed ball** is $\overline{N_r}(x) = \{y: d(x,y) \leq r \},$ that is, we also include points on the boundary.
+:::
+:::
+
+The idea of a neighborhood helps us to define a topology on a set, which describes the spatial relationship between elements in the set. Two metric spaces could have the same topology but a different geometry: we'll see examples in class to illustrate this point. 
+
+::: {.callout-important icon=false appearance="minimal"}
+## In-class activity
+Illustrate and/or describe $N_r(x)$ for given metric spaces.
+:::
+
+The topics in this course give you the foundation for further study of topology or geometry, if you're interested in learning more about these ideas.
+
+## Limit points, interior points, and isolated points
+
+We will study three important types of points in metric spaces: limit points, interior points, and isolated points.
+
+::: {.callout-note icon=false appearance="minimal"}
+::: {#def-limitpoint}
+## Limit point
+Suppose $X$ is a metric space. A point $p \in X$ is a **limit point** or **accumulation point** of $E \subset X$ if every neighborhood of $p$ contains a point $q \in E$ where $q \neq p.$
+:::
+:::
+
+Informally speaking, a limit point is a point where any neighborhood of that point includes another point that is in the set. Note that our limit point itself doesn't need to be in the set; it just needs to be arbitrarily close to points in the set.
+
+::: {.callout-note icon=false appearance="minimal"}
+::: {#def-interiorpoint}
+## Interior point
+Suppose $X$ is a metric space. A point $p \in X$ is an **interior point** of $E \subset X$ if there exists a neighborhood $N(p)$ such that $N \subset E.$
+:::
+:::
+
+::: {.callout-note icon=false appearance="minimal"}
+::: {#def-isolatedpoint}
+## Isolated point
+Suppose $X$ is a metric space. A point $p \in X$ is an **isolated point** of $E \subset X$ if $p \in E$ and $p$ is not a limit point of $E.$
+:::
+:::
+
+::: {.callout-important icon=false appearance="minimal"}
+## In-class activity
+We will further practice parsing these definitions and their negations in class.
+:::
+
+**Example.** Consider this picture of a metric space $X$. Green points and shaded regions are included in the set $B\subset X.$ Solid lines indicate that boundary points are included; dashed lines indicate that boundary points are not included. For each of the points $a,b,c,d,e,z$ label if they are limit points, interior points, and/or isolated points. 
+
+![](../figures/limitpoint-example.png){width=70%}
+
+Points $b, c, z$ are not in $B,$ whereas points $a, d, e$ are.
+
+- $a$ is an isolated point.
+- $b$ is a limit point.
+- $c$ is a limit point.
+- $d$ is a limit point and an interior point.
+- $e$ is a limit point.
+- $z$ is none of these. (It needs to be in the set to be an isolated point.)
+
+**Example.** Consider $\R$ with the Euclidean metric. Let $G = \{ \frac{1}{n}: n \in \N\}$. What are the limit points of $G$? What are the isolated points of $G$?
+
+**0 is the only limit point of $G$.** First, we argue that zero is a limit point. If we construct a neighborhood $N_r(0)$, then we know that
+
+---
+END
+
+
+To Embed a youtube video:
+{{< video https://www.youtube.com/embed/2AoxCkySv34 >}}
+
+A figure:
+
+![](../figures/counting-bats.png){width=50%}
+
+[An aside]{.aside}
+
+## Subsections
+
+Various boxes.
+
+::: {.callout-note icon=false appearance="minimal"}
+::: {#def-name}
+## Definition
+Definition
+:::
+:::
+
+
+
+::: {.callout-important icon=false appearance="minimal"}
+## In-class activity
+In class, we will 
+:::
+
+
+
+::: {.callout-note icon=false appearance="minimal"}
+::: {#thm-name}
+## Theorem
+Theorem
+:::
+
+::: {.proof}
+Proof.
+:::
+:::

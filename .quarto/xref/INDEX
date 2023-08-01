@@ -28,5 +28,8 @@
   },
   "assignments.qmd": {
     "assignments.html": "192f8333"
+  },
+  "topics/metricspaces.qmd": {
+    "metricspaces.html": "634e80b9"
   }
 }

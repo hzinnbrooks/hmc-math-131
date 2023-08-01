@@ -2,22 +2,12 @@
 title: "Math 131: Mathematical Analysis"
 ---
 
-This is a Quarto website.
+Welcome to Math 131: Mathematical Analysis at Harvey Mudd College. This page is under construction.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+**Instructor**: Dr. Heather Zinn Brooks ("Prof. Heather")
 
-::: {.callout-note icon=false appearance="minimal"}
-::: {#thm-line}
+**Email**: hzinnbrooks (at) g.hmc.edu
 
-## Line
+**Office**: Shan 2406
 
-The equation of any straight line, called a linear equation, can be written as:
-
-$$
-y = mx + b
-$$
-:::
-:::
-
-See @thm-line.
 

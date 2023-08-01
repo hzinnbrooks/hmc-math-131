@@ -1,10 +1,10 @@
 ---
-title: "Lecture 2: Induction"
-date: 08/30/2023
+title: "Lecture X: X"
+date: 09/06/2023
 date-format: "ddd DD MMMM YYYY"
 published-title: Lecture Date
 author: Heather Zinn Brooks
-description: "Description."
+description: "Definition."
 ---
 
 ::: {.hidden}
@@ -15,23 +15,42 @@ description: "Description."
 :::
 
 
-## The subsection
+To Embed a youtube video:
+{{< video https://www.youtube.com/embed/2AoxCkySv34 >}}
 
-This is a Quarto website.
+A figure:
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+![](../figures/counting-bats.png){width=50%}
+
+[An aside]{.aside}
+
+## Subsections
+
+Various boxes.
 
 ::: {.callout-note icon=false appearance="minimal"}
-::: {#thm-line}
-
-## Line
-
-The equation of any straight line, called a linear equation, can be written as:
-
-$$
-y = mx + b
-$$
+::: {#def-name}
+## Definition
+Definition
 :::
 :::
 
-See @thm-line.
+
+
+::: {.callout-important icon=false appearance="minimal"}
+## In-class activity
+In class, we will 
+:::
+
+
+
+::: {.callout-note icon=false appearance="minimal"}
+::: {#thm-name}
+## Theorem
+Theorem
+:::
+
+::: {.proof}
+Proof.
+:::
+:::

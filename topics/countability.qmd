@@ -34,8 +34,8 @@ In other words, he's mapping the elements of his set (bats) to a subset of the n
 
 ## Cardinality
 
-Suppose $J_n = \{1, 2, \dots, n\} \subset \N.$ Then, if $A$ is in one-to-one correspondence with $J_n$, then $A$ {\bf cardinality} $n$ (equivalently $A$ is size $n$). We denote this
-\[ \vert A \vert = n.\]
+Suppose $J_n = \{1, 2, \dots, n\} \subset \N.$ Then, if $A$ is in one-to-one correspondence with $J_n$, then $A$ **cardinality** $n$ (equivalently $A$ is size $n$). We denote this
+$$\vert A \vert = n.$$
 	
 If $A$ contains no elements, then it is not in one-to-one correspondence with any subset of $\N$; it is the empty set $\emptyset$ and $\vert A \vert = 0.$
 :::
