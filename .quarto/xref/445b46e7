@@ -1,1 +1,1 @@
-{"entries":[{"key":"thm-name","order":{"number":1,"section":[0,1,0,0,0,0,0]},"caption":"Theorem"},{"key":"def-name","order":{"number":1,"section":[0,1,0,0,0,0,0]},"caption":"Definition"}],"headings":["subsections","definition","theorem"]}
+{"headings":["subsections","definition","theorem"],"entries":[{"order":{"number":1,"section":[0,1,0,0,0,0,0]},"caption":"Definition","key":"def-name"},{"order":{"number":1,"section":[0,1,0,0,0,0,0]},"caption":"Theorem","key":"thm-name"}]}

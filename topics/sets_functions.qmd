@@ -4,7 +4,7 @@ date: 08/28/2023
 date-format: "ddd DD MMMM YYYY"
 published-title: Lecture Date
 author: Heather Zinn Brooks
-description: "Welcome to Math 131: Mathematical Analysis. This lecture sets up the foundations we need to be successful in this course. We discuss the principles of good mathematical writing and provide a review of sets, relations, and functions."
+description: "Welcome to Mathematical Analysis. This lecture sets up the foundations we need to be successful in this course. We discuss the principles of good mathematical writing and provide a review of sets, relations, and functions."
 ---
 
 ::: {.hidden}
@@ -20,7 +20,7 @@ Improving our mathematical writing is a primary objective of this course. [At HM
 
 Proof writing can seem really daunting. Sometimes it can feel like there is a "right" or "wrong" way to proceed, and that you need to demonstrate rigor in a particular way. This is not the case, and my hope for you is that this course helps you break free from this limiting belief.
 
-While there are general principles that make a proof "good", the wonderful thing about proof writing is that there is *never* only one right way to construct a proof. The proof is as unique as the person who writes it. Developing your own personal mathematical style is all part of the fun. 
+While there are general principles that make a proof "good," the wonderful thing about proof writing is that there is *never* only one right way to construct a proof. The proof is as unique as the person who writes it. Developing your own personal mathematical style is all part of the fun. 
 
 ::: {.callout-note icon=false appearance="minimal"}
 ## Prof. Heather's opinion on proofs
@@ -182,47 +182,4 @@ Give examples and/or draw pictures of functions that satisfy the following:
 - injective, but not surjective
 - neither injective nor surjective
 - bijective
-:::
-
-END
----
-
-To Embed a youtube video:
-{{< video https://www.youtube.com/embed/2AoxCkySv34 >}}
-
-A figure:
-
-![](../figures/counting-bats.png){width=50%}
-
-[An aside]{.aside}
-
-## Subsections
-
-Various boxes.
-
-::: {.callout-note icon=false appearance="minimal"}
-::: {#def-name}
-## Definition
-Definition
-:::
-:::
-
-
-
-::: {.callout-important icon=false appearance="minimal"}
-## In-class activity
-In class, we will 
-:::
-
-
-
-::: {.callout-note icon=false appearance="minimal"}
-::: {#thm-name}
-## Theorem
-Theorem
-:::
-
-::: {.proof}
-Proof.
-:::
 :::
