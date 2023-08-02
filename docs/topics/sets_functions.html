@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.475">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Heather Zinn Brooks">
+<meta name="description" content="Welcome to Math 131: Mathematical Analysis. This lecture sets up the foundations we need to be successful in this course. We discuss the principles of good mathematical writing and provide a review of sets, relations, and functions.">
+
+<title>Math 131: Mathematical Analysis - Lecture 1: Introduction to Analysis</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Lecture 1: Introduction to Analysis</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Math 131: Mathematical Analysis</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../syllabus.html" class="sidebar-item-text sidebar-link">Syllabus</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule.html" class="sidebar-item-text sidebar-link">Schedule and Topics</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignments.html" class="sidebar-item-text sidebar-link">Assignments</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#mathematical-writing" id="toc-mathematical-writing" class="nav-link active" data-scroll-target="#mathematical-writing">Mathematical Writing</a></li>
+  <li><a href="#review-sets-and-relations" id="toc-review-sets-and-relations" class="nav-link" data-scroll-target="#review-sets-and-relations">Review: Sets and Relations</a></li>
+  <li><a href="#review-functions" id="toc-review-functions" class="nav-link" data-scroll-target="#review-functions">Review: Functions</a></li>
+  <li><a href="#subsections" id="toc-subsections" class="nav-link" data-scroll-target="#subsections">Subsections</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Lecture 1: Introduction to Analysis</h1>
+</div>
+
+<div>
+  <div class="description">
+    Welcome to Math 131: Mathematical Analysis. This lecture sets up the foundations we need to be successful in this course. We discuss the principles of good mathematical writing and provide a review of sets, relations, and functions.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Heather Zinn Brooks </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Lecture Date</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">Mon 28 August 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="hidden">
+
+</div>
+<section id="mathematical-writing" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="mathematical-writing">Mathematical Writing</h2>
+<div class="page-columns page-full"><p>Improving our mathematical writing is a primary objective of this course. </p><div class="no-row-height column-margin column-container"><span class="">At HMC, this means that the skills you learned in Writ 1 are critical in Math 131!</span></div></div>
+<p>Proof writing can seem really daunting. Sometimes it can feel like there is a “right” or “wrong” way to proceed, and that you need to demonstrate rigor in a particular way. This is not the case, and my hope for you is that this course helps you break free from this limiting belief.</p>
+<p>While there are general principles that make a proof “good”, the wonderful thing about proof writing is that there is <em>never</em> only one right way to construct a proof. The proof is as unique as the person who writes it. Developing your own personal mathematical style is all part of the fun.</p>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Prof.&nbsp;Heather’s opinion on proofs
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The purpose of a proof is to illuminate a mathematical truth (the <em>theorem</em>, <em>lemma</em>, or <em>corollary</em>). It’s an explanation of why something is true that gives us additional insight or appreciation. A good proof achieves these goals in a way that is clear, concise, and enjoyable to read.</p>
+</div>
+</div>
+<p>How do we write a good proof? First and foremost, good mathematical writing follows the principles of good writing.</p>
+<ol type="1">
+<li><strong>Consider your audience</strong>. The level of detail that you include, the notation and terminology that you use, and the formality or informality of your language should depend on who your intended reader is. A good rule of thumb for this course is that you write your proofs so that they would be clear and understandable to yourself two weeks prior (or a few weeks from now when you’re studying for an exam).</li>
+<li><strong>Be clear and concise</strong>. In my experience, it is much more common for new proof-writers to make their proofs too long rather than too short. Try to make your arguments in a direct way and do not include extraneous information.</li>
+<li><strong>Use active voice</strong>. It is tempting to hide behind passive voice to make our writing sound more “objective,” but the opposite is true: using active voice is an excellent way to make your writing direct and clear. Furthermore, active voice highlights that there is a person (or people) doing the mathematics. This is empowering for you as a mathematician and it helps us all remember that mathematics is a human enterprise.<br>
+</li>
+<li><strong>Revise, revise, revise!</strong> Writing a good proof is a process … nobody writes a good proof the first time! As with any writing, proofs should have multiple drafts. You can and should edit and solicit feedback.</li>
+</ol>
+<div class="no-row-height column-margin column-container"><span class="">In mathematics, we often use “we” as the subject even if we are writing the proof by ourselves. It might sound funny at first, but this is a way to acknowledge that the proof is a shared experience between the writer and the reader.</span></div><p>My colleague Francis Su has written some excellent <a href="https://math.hmc.edu/su/wp-content/uploads/sites/10/2020/08/Guidelines-for-Good-Mathematical-Writing.pdf">guidelines for good mathematical writing</a> that dive further into these points. Please read this handout before proceeding on any of your written assignments.</p>
+<p><a href="https://philarchive.org/archive/INGDIP">This study</a> by Inglis and Aberdein suggests that appraisal of whether a proof is “beautiful,” “intricate,” “rigorous,” or even “useful” is subjective. We will spend a lot of time in class constructing and critiquing proofs. It’s possible that you, your classmates, and I will sometimes disagree on points of style. This is totally normal and it’s all part of the process.</p>
+</section>
+<section id="review-sets-and-relations" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="review-sets-and-relations">Review: Sets and Relations</h2>
+<p>The foundational mathematical objects we’ll be working with in this course are sets.</p>
+<div class="callout-note callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-set" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 1 (Set) </strong></span>A <strong>set</strong> is a collection of things.</p>
+</div>
+</div>
+</div>
+</div>
+<p>If we are writing out a description of a set, we denote the set with curly braces. For convenience we sometimes give sets shorthand names like <span class="math inline">\(S\)</span>. A set is very general and can contain <em>any</em> type of object … even other sets!</p>
+<p><strong>Example.</strong> <span class="math inline">\(S = \{4, \Delta, \Pi, \{2, \square\}\}\)</span> is a set, and it contains the set <span class="math inline">\(\{2, \square\}\)</span>.</p>
+<p>The set in this example contains 4 objects, which we call <strong>elements</strong>.</p>
+<div class="page-columns page-full"><p>We can also write <span class="math inline">\(S = \{x : P(x) \text{ is true}\}\)</span>, where <span class="math inline">\(P\)</span> is some statement about <span class="math inline">\(x\)</span>. </p><div class="no-row-height column-margin column-container"><span class="">The colon (:) should be read as “such that.” <span class="math inline">\(S\)</span> is the set of elements <span class="math inline">\(x\)</span> such that the statement <span class="math inline">\(P(x)\)</span> is true. We can also use a vertical bar (|) to denote the same idea.</span></div></div>
+<p><strong>Example.</strong> S = {x : x&lt;2}</p>
+<p>Below is some helpful shorthand notation for sets that we’ll encounter a lot in this class.</p>
+<table class="table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Notation</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(x \in S\)</span></td>
+<td><span class="math inline">\(x\)</span> is in <span class="math inline">\(S\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(x \notin S\)</span></td>
+<td><span class="math inline">\(x\)</span> is not in <span class="math inline">\(S\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\emptyset\)</span></td>
+<td>The empty set (the set with no elements)</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(A \subset B\)</span></td>
+<td><span class="math inline">\(A\)</span> is a subset of <span class="math inline">\(B\)</span>: if <span class="math inline">\(x \in A\)</span>, then <span class="math inline">\(x \in B.\)</span> Be careful … <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> could be the same set!</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(A \subseteq B\)</span></td>
+<td>Equivalent to <span class="math inline">\(A \subset B\)</span>, but clearly denoting the possibility of equality of the sets.</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(A \not\subset B\)</span></td>
+<td><span class="math inline">\(A\)</span> is not a subset of <span class="math inline">\(B\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(A \cup B\)</span></td>
+<td>Union: The set <span class="math inline">\(\{x:x \in A \text{ or } x \in B\}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(A \cap B\)</span></td>
+<td>Intersection: The set <span class="math inline">\(\{x:x \in A \text{ and } x \in B\}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(A^C\)</span></td>
+<td>Complement: The set <span class="math inline">\(\{x: x \notin A\}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(A \setminus B\)</span></td>
+<td>Set minus: The set <span class="math inline">\(\{x:x \in A \text{ and } x \notin B\}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(A \times B\)</span></td>
+<td>Cartesian product: The set <span class="math inline">\(\{(a,b): a \in A \text{ and } b \in B\}\)</span>. Here <span class="math inline">\((a,b)\)</span> is an ordered pair, so order matters.</td>
+</tr>
+</tbody>
+</table>
+<p>In this course, we’ll often find ourselves in the situation where we would like to show that two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are the same set. Set inclusion gives us a technique to do this. If <span class="math inline">\(A \subset B\)</span> and <span class="math inline">\(B \subset A\)</span>, then it must be true that every element in <span class="math inline">\(A\)</span> is an element of <span class="math inline">\(B\)</span> and vice versa, that is, <span class="math inline">\(A=B.\)</span> Otherwise, <span class="math inline">\(A\neq B.\)</span></p>
+<p>If <span class="math inline">\(A \subset B\)</span> but <span class="math inline">\(B \not\subset A\)</span>, we say that <span class="math inline">\(A\)</span> is a <strong>proper subset</strong> of <span class="math inline">\(B.\)</span></p>
+<div class="callout-note callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-relation" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 2 (Relation) </strong></span>A (binary) <strong>relation</strong> <span class="math inline">\(R\)</span> is a subset of another object, say <span class="math inline">\(A\times B\)</span>, where if <span class="math inline">\((a,b) \in R\)</span> we write <span class="math inline">\(aRb.\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><strong>Examples:</strong></p>
+<ul>
+<li>If <span class="math inline">\(P\)</span> is the set of people, then <span class="math inline">\(A\)</span> “is a student of” is a relation on <span class="math inline">\(P\times P.\)</span> In the notation above: <span class="math display">\[
+\text{(you)} \,A\, \text{(Prof. Heather)}.
+\]</span></li>
+<li>If <span class="math inline">\(\mathbb{Z}\)</span> is the set of integers, then <span class="math inline">\(&lt;\)</span> is a relation on <span class="math inline">\(\mathbb{Z}\times \mathbb{Z}.\)</span> In the notation above: <span class="math display">\[
+7 &lt; 10.
+\]</span></li>
+</ul>
+<p>One important and useful type of relation is an <strong>equivalence relation</strong>, which satisfies some special properties.</p>
+<div class="callout-note callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-eqrelation" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 3 (Equivalence relation) </strong></span>An <strong>equivalence relation</strong> <span class="math inline">\(R\)</span> on a set <span class="math inline">\(S\)</span> is a relation on <span class="math inline">\(S\times S\)</span> such that</p>
+<ol type="1">
+<li><span class="math inline">\(aRa\)</span> (<span class="math inline">\(R\)</span> is <em>reflexive</em>)</li>
+<li><span class="math inline">\(aRb\)</span> implies <span class="math inline">\(bRa\)</span> (<span class="math inline">\(R\)</span> is <em>symmetric</em>)</li>
+<li>If <span class="math inline">\(aRb\)</span> and <span class="math inline">\(bRc\)</span>, then <span class="math inline">\(aRc\)</span> (<span class="math inline">\(R\)</span> is <em>transitive</em>)</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="page-columns page-full"><p>Equivalence relations are often denoted with <span class="math inline">\(\sim\)</span> or <span class="math inline">\(\simeq\)</span> (we usually reserve <span class="math inline">\(=\)</span> for the identity). </p><div class="no-row-height column-margin column-container"><span class=""><strong>Possible project</strong>: Construction of the rationals <span class="math inline">\(\mathbb{Q}\)</span> starting with the integers <span class="math inline">\(\mathbb{Z}\)</span> using sets and relations.</span></div></div>
+</section>
+<section id="review-functions" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="review-functions">Review: Functions</h2>
+<div class="page-columns page-full"><p>A function takes elements of one set (called the <strong>domain</strong>) and maps them to another set (called the <strong>codomain</strong>) so that we get a unique output for each input. We use the following notation for a function <span class="math inline">\(f\)</span> with domain <span class="math inline">\(A\)</span> and codomain <span class="math inline">\(B\)</span> : <span class="math display">\[
+f: \ \begin{array}[t]{ &gt;{\displaystyle}r &gt;{{}}c&lt;{{}}  &gt;{\displaystyle}l }
+          A &amp;\to&amp; B \\
+          x &amp;\mapsto&amp; f(x).
+         \end{array}
+\]</span></p><div class="no-row-height column-margin column-container"><span class="">A function <span class="math inline">\(f\)</span> from <span class="math inline">\(A\)</span> to <span class="math inline">\(B\)</span> is a relation such that if <span class="math inline">\(a\,f\,b\)</span> and <span class="math inline">\(a\,f\,b'\)</span> then <span class="math inline">\(b=b'.\)</span> That is, it’s a special relation that assigns each <span class="math inline">\(a \in A\)</span> to a <span class="math inline">\(b \in B.\)</span></span></div></div>
+<p>The top line gives the function’s name along with the domain and codomain. Here, we use the regular arrow <span class="math inline">\(\to\)</span> (LaTeX <code>\to</code>). The bottom line indicates what happens to individual elements: an element <span class="math inline">\(x\)</span> in <span class="math inline">\(A\)</span> is mapped to an element <span class="math inline">\(f(x)\)</span> in <span class="math inline">\(B\)</span>, with the ‘maps to’ arrow <span class="math inline">\(\mapsto\)</span> (LaTeX <code>\mapsto</code>).</p>
+<p><img src="../figures/function-diagram.png" class="img-fluid" style="width:50.0%"></p>
+<div class="callout-note callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-image" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 4 (Image and Inverse Image) </strong></span>Consider a function <span class="math inline">\(f:A \to B.\)</span> Suppose <span class="math inline">\(C \subseteq A\)</span> and <span class="math inline">\(D \subseteq B.\)</span></p>
+<ul>
+<li>We define <span class="math inline">\(f(C) = \{f(x):x \in C\}\)</span> to be the <strong>image</strong> of <span class="math inline">\(C\)</span> under this mapping.</li>
+<li>We define <span class="math inline">\(f^{-1}(D) = \{x: f(x) \in D \}\)</span> to be the <strong>inverse image</strong> of <span class="math inline">\(D\)</span> under this mapping. Note that the inverse image may not be a unique <span class="math inline">\(x\)</span> for each <span class="math inline">\(f(x).\)</span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<p>That is, the image a set of outputs <span class="math inline">\(f(C)\)</span> for a particular input set <span class="math inline">\(C\)</span>. The inverse image is the set of inputs <span class="math inline">\(f^{-1}(D)\)</span> that yield a particular output set <span class="math inline">\(D\)</span>. The image for the domain of a function is called the <strong>range</strong>.</p>
+<div class="callout-important callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Activity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Explain in your own words the difference between codomain, range, and image. When are these quantities the same? When are they different? Give examples and/or draw pictures to illustrate this.</p>
+</div>
+</div>
+<p>Next, we give some important terminology to describe a function <span class="math inline">\(f:A\to B.\)</span></p>
+<div class="callout-note callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-surjection" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 5 (Surjection) </strong></span>When <span class="math inline">\(f(A) = B\)</span>, we say that <span class="math inline">\(f\)</span> is a <strong>surjection</strong> or that <span class="math inline">\(f\)</span> is <strong>surjective</strong>. Alternatively, we say that <span class="math inline">\(f\)</span> is <strong>onto</strong>.</p>
+</div>
+</div>
+</div>
+</div>
+<p>In other words, a function is surjective is the range and the codomain are the same: it’s a function whose mapping `hits’ every element in the codomain as an output.</p>
+<div class="callout-note callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-injection" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 6 (Injection) </strong></span>If <span class="math inline">\(f(x) = f(y)\)</span> implies that <span class="math inline">\(x=y\)</span>, we say <span class="math inline">\(f\)</span> is an <strong>injection</strong> or that <span class="math inline">\(f\)</span> is <strong>injective</strong>. Alternatively, we say that <span class="math inline">\(f\)</span> is <strong>one-to-one</strong>.</p>
+</div>
+</div>
+</div>
+</div>
+<p>Equivalently, <span class="math inline">\(f\)</span> is injective if the inverse image of <span class="math inline">\(f(x)\)</span> is a single point. In an injective function, each output came from a unique input.</p>
+<div class="callout-note callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-bijection" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 7 (Bijection) </strong></span>If <span class="math inline">\(f\)</span> is both one to one and onto, we say that <span class="math inline">\(f\)</span> is a <strong>bijection</strong> or that <span class="math inline">\(f\)</span> is <strong>bijective</strong>. A bijection means that the inverse of a function is also a function, and in this case we say that <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are in <strong>one-to-one correspondence</strong>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout-important callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Activity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Give examples and/or draw pictures of functions that satisfy the following:</p>
+<ul>
+<li>surjective, but not injective</li>
+<li>injective, but not surjective</li>
+<li>neither injective nor surjective</li>
+<li>bijective</li>
+</ul>
+</div>
+</div>
+<p>END</p>
+<hr>
+<p>To Embed a youtube video:</p>
+<div class="quarto-video ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/2AoxCkySv34" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p>A figure:</p>
+<p><img src="../figures/counting-bats.png" class="img-fluid" style="width:50.0%"></p>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">An aside</span></div></div>
+</section>
+<section id="subsections" class="level2">
+<h2 class="anchored" data-anchor-id="subsections">Subsections</h2>
+<p>Various boxes.</p>
+<div class="callout-note callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-name" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 8 (Definition) </strong></span>Definition</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout-important callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+In-class activity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In class, we will</p>
+</div>
+</div>
+<div class="callout-note callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="thm-name" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 1 (Theorem) </strong></span>Theorem</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Proof.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

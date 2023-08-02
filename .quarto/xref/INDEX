@@ -31,5 +31,8 @@
   },
   "topics/metricspaces.qmd": {
     "metricspaces.html": "634e80b9"
+  },
+  "topics/sets_functions.qmd": {
+    "sets_functions.html": "479aac11"
   }
 }

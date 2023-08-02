@@ -2,6 +2,7 @@
   {
     "listing": "/schedule.html",
     "items": [
+      "/topics/sets_functions.html",
       "/topics/induction.html",
       "/topics/countability.html",
       "/topics/metricspaces.html"

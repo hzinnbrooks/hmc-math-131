@@ -1,0 +1,228 @@
+---
+title: "Lecture 1: Introduction to Analysis"
+date: 08/28/2023
+date-format: "ddd DD MMMM YYYY"
+published-title: Lecture Date
+author: Heather Zinn Brooks
+description: "Welcome to Math 131: Mathematical Analysis. This lecture sets up the foundations we need to be successful in this course. We discuss the principles of good mathematical writing and provide a review of sets, relations, and functions."
+---
+
+::: {.hidden}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+:::
+
+## Mathematical Writing
+
+Improving our mathematical writing is a primary objective of this course. [At HMC, this means that the skills you learned in Writ 1 are critical in Math 131!]{.aside}
+
+Proof writing can seem really daunting. Sometimes it can feel like there is a "right" or "wrong" way to proceed, and that you need to demonstrate rigor in a particular way. This is not the case, and my hope for you is that this course helps you break free from this limiting belief.
+
+While there are general principles that make a proof "good", the wonderful thing about proof writing is that there is *never* only one right way to construct a proof. The proof is as unique as the person who writes it. Developing your own personal mathematical style is all part of the fun. 
+
+::: {.callout-note icon=false appearance="minimal"}
+## Prof. Heather's opinion on proofs
+The purpose of a proof is to illuminate a mathematical truth (the *theorem*, *lemma*, or *corollary*). It's an explanation of why something is true that gives us additional insight or appreciation. A good proof achieves these goals in a way that is clear, concise, and enjoyable to read.
+:::
+
+
+How do we write a good proof? First and foremost, good mathematical writing follows the principles of good writing. 
+
+1. **Consider your audience**. The level of detail that you include, the notation and terminology that you use, and the formality or informality of your language should depend on who your intended reader is. A good rule of thumb for this course is that you write your proofs so that they would be clear and understandable to yourself two weeks prior (or a few weeks from now when you're studying for an exam).
+2. **Be clear and concise**. In my experience, it is much more common for new proof-writers to make their proofs too long rather than too short. Try to make your arguments in a direct way and do not include extraneous information.
+3. **Use active voice**. It is tempting to hide behind passive voice to make our writing sound more "objective," but the opposite is true: using active voice is an excellent way to make your writing direct and clear. Furthermore, active voice highlights that there is a person (or people) doing the mathematics.[In mathematics, we often use "we" as the subject even if we are writing the proof by ourselves. It might sound funny at first, but this is a way to acknowledge that the proof is a shared experience between the writer and the reader.]{.aside} This is empowering for you as a mathematician and it helps us all remember that mathematics is a human enterprise.     
+4. **Revise, revise, revise!** Writing a good proof is a process ... nobody writes a good proof the first time! As with any writing, proofs should have multiple drafts. You can and should edit and solicit feedback.
+
+My colleague Francis Su has written some excellent [guidelines for good mathematical writing](https://math.hmc.edu/su/wp-content/uploads/sites/10/2020/08/Guidelines-for-Good-Mathematical-Writing.pdf) that dive further into these points. Please read this handout before proceeding on any of your written assignments.
+
+[This study](https://philarchive.org/archive/INGDIP) by Inglis and Aberdein suggests that appraisal of whether a proof is "beautiful," "intricate," "rigorous," or even "useful" is subjective. We will spend a lot of time in class constructing and critiquing proofs. It's possible that you, your classmates, and I will sometimes disagree on points of style. This is totally normal and it's all part of the process.
+
+## Review: Sets and Relations
+
+The foundational mathematical objects we'll be working with in this course are sets.
+
+::: {.callout-note icon=false appearance="minimal"}
+::: {#def-set}
+## Set
+A **set** is a collection of things.
+:::
+:::
+
+If we are writing out a description of a set, we denote the set with curly braces. For convenience we sometimes give sets shorthand names like $S$. A set is very general and can contain *any* type of object ... even other sets!
+
+**Example.** $S = \{4, \Delta, \Pi, \{2, \square\}\}$ is a set, and it contains the set $\{2, \square\}$.
+
+The set in this example contains 4 objects, which we call **elements**.
+
+We can also write $S = \{x : P(x) \text{ is true}\}$, where $P$ is some statement about $x$. [The colon (:) should be read as "such that." $S$ is the set of elements $x$ such that the statement $P(x)$ is true. We can also use a vertical bar (|) to denote the same idea.]{.aside}
+
+**Example.** S = \{x : x<2\}
+
+Below is some helpful shorthand notation for sets that we'll encounter a lot in this class.
+
+| Notation | Description |
+| ----------- | ----------- |
+| $x \in S$ | $x$ is in $S$ |
+| $x \notin S$ | $x$ is not in $S$ |
+| $\emptyset$ | The empty set (the set with no elements) |
+| $A \subset B$ | $A$ is a subset of $B$: if $x \in A$, then $x \in B.$ Be careful ... $A$ and $B$ could be the same set!|
+| $A \subseteq B$ | Equivalent to $A \subset B$, but clearly denoting the possibility of equality of the sets.|
+| $A \not\subset B$ | $A$ is not a subset of $B$ |
+| $A \cup B$ | Union: The set $\{x:x \in A \text{ or } x \in B\}$ |
+| $A \cap B$ | Intersection: The set $\{x:x \in A \text{ and } x \in B\}$ |
+|$A^C$ | Complement: The set $\{x: x \notin A\}$ |
+|$A \setminus B$ | Set minus: The set $\{x:x \in A \text{ and } x \notin B\}$|
+|$A \times B$ | Cartesian product: The set $\{(a,b): a \in A \text{ and } b \in B\}$. Here $(a,b)$ is an ordered pair, so order matters.|
+
+In this course, we'll often find ourselves in the situation where we would like to show that two sets $A$ and $B$ are the same set. Set inclusion gives us a technique to do this. If $A \subset B$ and $B \subset A$, then it must be true that every element in $A$ is an element of $B$ and vice versa, that is, $A=B.$ Otherwise, $A\neq B.$
+
+If $A \subset B$ but $B \not\subset A$, we say that $A$ is a **proper subset** of $B.$
+
+::: {.callout-note icon=false appearance="minimal"}
+::: {#def-relation}
+## Relation
+A (binary) **relation** $R$ is a subset of another object, say $A\times B$, where if $(a,b) \in R$ we write $aRb.$
+:::
+:::
+
+**Examples:**
+
+- If $P$ is the set of people, then $A$ "is a student of" is a relation on $P\times P.$ In the notation above: 
+$$
+\text{(you)} \,A\, \text{(Prof. Heather)}.
+$$
+- If $\Z$ is the set of integers, then $<$ is a relation on $\Z \times \Z.$ In the notation above: 
+$$
+7 < 10.
+$$
+
+One important and useful type of relation is an **equivalence relation**, which satisfies some special properties.
+
+::: {.callout-note icon=false appearance="minimal"}
+::: {#def-eqrelation}
+## Equivalence relation
+An **equivalence relation** $R$ on a set $S$ is a relation on $S\times S$ such that
+
+1. $aRa$ ($R$ is *reflexive*)
+2. $aRb$ implies $bRa$ ($R$ is *symmetric*)
+3. If $aRb$ and $bRc$, then $aRc$ ($R$ is *transitive*)
+
+:::
+:::
+
+Equivalence relations are often denoted with $\sim$ or $\simeq$ (we usually reserve $=$ for the identity).
+[**Possible project**: Construction of the rationals $\Q$ starting with the integers $\Z$ using sets and relations.]{.aside}
+
+## Review: Functions
+
+A function takes elements of one set (called the **domain**) and maps them to another set (called the **codomain**) so that we get a unique output for each input. [A function $f$ from $A$ to $B$ is a relation such that if $a\,f\,b$ and $a\,f\,b'$ then $b=b'.$ That is, it's a special relation that assigns each $a \in A$ to a $b \in B.$]{.aside}We use the following notation for a function $f$ with domain $A$ and codomain $B$ :
+$$
+f: \ \begin{array}[t]{ >{\displaystyle}r >{{}}c<{{}}  >{\displaystyle}l } 
+          A &\to& B \\ 
+          x &\mapsto& f(x).
+         \end{array}
+$$
+
+The top line gives the function's name along with the domain and codomain. Here, we use the regular arrow $\to$ (LaTeX `\to`).
+The bottom line indicates what happens to individual elements: an element $x$ in $A$ is mapped to an element $f(x)$ in $B$, with the 'maps to' arrow $\mapsto$ (LaTeX `\mapsto`). 
+
+![](../figures/function-diagram.png){width=50%}
+
+::: {.callout-note icon=false appearance="minimal"}
+::: {#def-image}
+## Image and Inverse Image
+Consider a function $f:A \to B.$ Suppose $C \subseteq A$ and  $D \subseteq B.$	
+
+- We define $f(C) = \{f(x):x \in C\}$ to be the **image** of $C$ under this mapping.
+- We define $f^{-1}(D) = \{x: f(x) \in D \}$ to be the **inverse image** of $D$ under this mapping. Note that the inverse image may not be a unique $x$ for each $f(x).$
+:::
+:::
+
+That is, the image a set of outputs $f(C)$ for a particular input set $C$. The inverse image is the set of inputs $f^{-1}(D)$ that yield a particular output set $D$. The image for the domain of a function is called the **range**.
+
+::: {.callout-important icon=false appearance="minimal"}
+## Activity
+Explain in your own words the difference between codomain, range, and image. When are these quantities the same? When are they different? Give examples and/or draw pictures to illustrate this.
+:::
+
+Next, we give some important terminology to describe a function $f:A\to B.$
+
+::: {.callout-note icon=false appearance="minimal"}
+::: {#def-surjection}
+## Surjection
+When $f(A) = B$, we say that $f$ is a **surjection** or that $f$ is **surjective**. Alternatively, we say that $f$ is **onto**.
+:::
+:::
+
+In other words, a function is surjective is the range and the codomain are the same: it's a function whose mapping `hits' every element in the codomain as an output.
+
+::: {.callout-note icon=false appearance="minimal"}
+::: {#def-injection}
+## Injection
+If $f(x) = f(y)$ implies that $x=y$, we say $f$ is an **injection** or that $f$ is **injective**. Alternatively, we say that $f$ is **one-to-one**.
+:::
+:::
+
+Equivalently, $f$ is injective if the inverse image of $f(x)$ is a single point. In an injective function, each output came from a unique input.
+
+::: {.callout-note icon=false appearance="minimal"}
+::: {#def-bijection}
+## Bijection
+If $f$ is both one to one and onto, we say that $f$ is a **bijection** or that $f$ is **bijective**. A bijection means that the inverse of a function is also a function, and in this case we say that $A$ and $B$ are in **one-to-one correspondence**.
+:::
+:::
+
+::: {.callout-important icon=false appearance="minimal"}
+## Activity
+Give examples and/or draw pictures of functions that satisfy the following:
+
+- surjective, but not injective
+- injective, but not surjective
+- neither injective nor surjective
+- bijective
+:::
+
+END
+---
+
+To Embed a youtube video:
+{{< video https://www.youtube.com/embed/2AoxCkySv34 >}}
+
+A figure:
+
+![](../figures/counting-bats.png){width=50%}
+
+[An aside]{.aside}
+
+## Subsections
+
+Various boxes.
+
+::: {.callout-note icon=false appearance="minimal"}
+::: {#def-name}
+## Definition
+Definition
+:::
+:::
+
+
+
+::: {.callout-important icon=false appearance="minimal"}
+## In-class activity
+In class, we will 
+:::
+
+
+
+::: {.callout-note icon=false appearance="minimal"}
+::: {#thm-name}
+## Theorem
+Theorem
+:::
+
+::: {.proof}
+Proof.
+:::
+:::
