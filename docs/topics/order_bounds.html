@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.475">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Heather Zinn Brooks">
+<meta name="description" content="So far we’ve met some interesting infinite sets, including the natural numbers, the rationals, and the reals. In this lecture, we’ll explore some structural and algebraic properties that these sets have. How are they similar, and how are they different? What is it that makes the real numbers so special?">
+
+<title>Math 131: Mathematical Analysis - Lecture 4: Fields, Order, and Bounds</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Lecture 4: Fields, Order, and Bounds</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Math 131: <strong>Mathematical Analysis</strong></a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../syllabus.html" class="sidebar-item-text sidebar-link">Syllabus</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule.html" class="sidebar-item-text sidebar-link">Schedule and Topics</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignments.html" class="sidebar-item-text sidebar-link">Assignments</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#order" id="toc-order" class="nav-link active" data-scroll-target="#order">Order</a></li>
+  <li><a href="#fields-and-ordered-fields" id="toc-fields-and-ordered-fields" class="nav-link" data-scroll-target="#fields-and-ordered-fields">Fields and Ordered Fields</a></li>
+  <li><a href="#least-upper-bounds-and-greatest-lower-bounds" id="toc-least-upper-bounds-and-greatest-lower-bounds" class="nav-link" data-scroll-target="#least-upper-bounds-and-greatest-lower-bounds">Least Upper Bounds and Greatest Lower Bounds</a></li>
+  <li><a href="#completeness-of-mathbbr" id="toc-completeness-of-mathbbr" class="nav-link" data-scroll-target="#completeness-of-mathbbr">Completeness of <span class="math inline">\(\mathbb{R}\)</span></a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Lecture 4: Fields, Order, and Bounds</h1>
+</div>
+
+<div>
+  <div class="description">
+    So far we’ve met some interesting infinite sets, including the natural numbers, the rationals, and the reals. In this lecture, we’ll explore some structural and algebraic properties that these sets have. How are they similar, and how are they different? What is it that makes the real numbers so special?
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Heather Zinn Brooks </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Lecture Date</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">Mon 11 September 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="hidden">
+
+</div>
+<section id="order" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="order">Order</h2>
+<p>If we want an intuitive notion of order on our set, it turns out we need it to satisfy just a few properties, which we define below.</p>
+<div class="callout-note callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-order" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 1 (Order) </strong></span>An <strong>order</strong> on a set <span class="math inline">\(S\)</span> is a relation <span class="math inline">\(&lt;\)</span> satisfying two properties.</p>
+<ol type="1">
+<li><em>Trichotomy</em>. If <span class="math inline">\(x, y \in S,\)</span> exactly one of the following statements is true: <span class="math inline">\(x &lt; y, \ x = y, \text{ or } y &lt; x.\)</span> </li>
+<li><em>Transitivity</em>. If <span class="math inline">\(x, y, z \in S\)</span>, and if <span class="math inline">\(x &lt; y\)</span> and <span class="math inline">\(y&lt;z,\)</span> then <span class="math inline">\(x &lt; z.\)</span></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="no-row-height column-margin column-container"><span class="callout-margin-content callout-margin-content-simple">We can define <span class="math inline">\(x &gt; y\)</span> as equivalent to <span class="math inline">\(y &lt; x\)</span>. We can also define <span class="math inline">\(x \leq y\)</span> as equivalent to <span class="math inline">\(x&lt;y\)</span> or <span class="math inline">\(x=y\)</span>.</span></div><p>You’ll notice that this is pretty flexible, and it actually allows us to define order in many different ways.</p>
+<p><strong>Example.</strong> In <span class="math inline">\(\mathbb{Z},\)</span> we say <span class="math inline">\(m&lt;n\)</span> if <span class="math inline">\(n-m\)</span> is positive, that is, if <span class="math inline">\(n-m\)</span> is in the set <span class="math inline">\(\{1, 2, 3, \dots \}\)</span>.</p>
+<p><strong>Example.</strong> In <span class="math inline">\(\mathbb{Z}\times \mathbb{Z}\)</span> we could define a <em>dictionary</em> or <em>lexicographic</em> order: We say <span class="math inline">\((a,b) &lt; (c,d)\)</span> if <span class="math inline">\(a&lt;c\)</span> or if <span class="math inline">\(a=c\)</span> and <span class="math inline">\(b&lt;d.\)</span></p>
+<div class="callout-important callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+In-class activity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Prove that the two examples above are orders on their respective sets.</p>
+</div>
+</div>
+</section>
+<section id="fields-and-ordered-fields" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="fields-and-ordered-fields">Fields and Ordered Fields</h2>
+<p>Some sets have special properties.</p>
+<p>A <strong>field</strong> is a set with two operations <span class="math inline">\(+\)</span> and <span class="math inline">\(\times.\)</span> A field must be closed under both operations and satisfy axioms for commutativity, associativity, identity, and inverses for both operations. It must additionally obey the distributive law with respect to the given operations. A complete list of the field axioms as defined in Rudin is reproduced below.</p>
+<p>Our set <span class="math inline">\(F\)</span> is a field if it satisfies the following axioms:</p>
+<p><strong>Axioms for addition</strong></p>
+<ul>
+<li>If <span class="math inline">\(x, y \in F\)</span>, then <span class="math inline">\(x+y \in F\)</span> (<em>closure</em>)</li>
+<li><span class="math inline">\(x+y = y+x\)</span> for all <span class="math inline">\(x, y \in F.\)</span> (<em>commutativity</em>)</li>
+<li><span class="math inline">\((x+y) + z = x + (y+z)\)</span> for all <span class="math inline">\(x,y, z \in F.\)</span> (<em>associativity</em>)</li>
+<li><span class="math inline">\(F\)</span> contains an element <span class="math inline">\(0\)</span> such that <span class="math inline">\(0 + x = x\)</span> for every <span class="math inline">\(x \in F\)</span>. (<em>identity</em>)</li>
+<li>To every <span class="math inline">\(x\in F\)</span> corresponds an element <span class="math inline">\(-x \in F\)</span> such that <span class="math inline">\(x + (-x) = 0\)</span>. (<em>inverse</em>)</li>
+</ul>
+<p><strong>Axioms for multiplication</strong></p>
+<ul>
+<li>If <span class="math inline">\(x, y \in F\)</span>, then <span class="math inline">\(xy \in F\)</span>. (<em>closure</em>)</li>
+<li><span class="math inline">\(xy = yx\)</span> for all <span class="math inline">\(x, y \in F.\)</span> (<em>commutativity</em>)</li>
+<li><span class="math inline">\((xy)z = x(yz)\)</span> for all <span class="math inline">\(x,y, z \in F.\)</span> (<em>associativity</em>)</li>
+<li><span class="math inline">\(F\)</span> contains an element <span class="math inline">\(1\)</span> such that <span class="math inline">\(1x = x\)</span> for every <span class="math inline">\(x \in F\)</span>. (<em>identity</em>)</li>
+<li>If <span class="math inline">\(x\in F\)</span> and <span class="math inline">\(x \neq 0\)</span> then there exists an element <span class="math inline">\(1/x \in F\)</span> such that <span class="math inline">\(x\left(1/x\right)=1\)</span>. (<em>inverse</em>)</li>
+</ul>
+<p><strong>The distributive law</strong></p>
+<ul>
+<li><span class="math inline">\(x(y+z)=xy+xz\)</span> holds for all <span class="math inline">\(x, y, z \in F.\)</span></li>
+</ul>
+<p>In this class, we will work with a few fields that you have already encountered in previous courses: <span class="math inline">\(\mathbb{Q}, \mathbb{R},\)</span> and <span class="math inline">\(\mathbb{C}.\)</span> Notice that <span class="math inline">\(\mathbb{N}\)</span> and <span class="math inline">\(\mathbb{Z}\)</span> are not fields: can you see why?</p>
+<div class="page-columns page-full"><p>You’ll find more exploration of special algebraic structures of sets in an abstract algebra course.</p><div class="no-row-height column-margin column-container"><span class="">At HMC, this is Math 171.</span></div></div>
+<p>If we have a set that is ordered and a field, and the field operations “play nicely” with the order, then we have a set that’s called an <strong>ordered field</strong>. Let’s define that more precisely now.</p>
+<div class="callout-note callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-orderedfield" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 2 (Ordered field) </strong></span>Suppose <span class="math inline">\(F\)</span> is a field and <span class="math inline">\(F\)</span> has an order. We say that <span class="math inline">\(F\)</span> is an ordered field that satisfies the following two additional properties.</p>
+<ol type="1">
+<li>If <span class="math inline">\(x,y,z \in F\)</span>, then <span class="math inline">\(y&lt;z\)</span> implies that <span class="math inline">\(y+x &lt; z+x\)</span>.</li>
+<li>Furthermore, if <span class="math inline">\(y&lt;z\)</span> and <span class="math inline">\(x&gt;0\)</span>, then <span class="math inline">\(xy &lt; xz.\)</span></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<p><strong>Example.</strong> <span class="math inline">\(\mathbb{Q}\)</span> and <span class="math inline">\(\mathbb{R}\)</span> are both ordered fields.</p>
+<div class="callout-warning callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>An ordered field is not just a set that is ordered and a field. For example, the complex field <span class="math inline">\(\mathbb{C}\)</span> can have an order, but is <em>not</em> an ordered field: you’ll show this in homework.</p>
+<p>A set has to satisfy the additional properties about the operations provided in the definition to be an ordered field.</p>
+</div>
+</div>
+<p>If we have an ordered field, this means we can apply our field operations and have order be affected in the way that we have come to intuitively expect from our experience with the reals. If we add the same number to two different numbers, the bigger one stays bigger. If we multiply two numbers by a positive number, the bigger one stays bigger.</p>
+</section>
+<section id="least-upper-bounds-and-greatest-lower-bounds" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="least-upper-bounds-and-greatest-lower-bounds">Least Upper Bounds and Greatest Lower Bounds</h2>
+<p>Once we have a notion of ordering, we become empowered to look for biggest and smallest elements (and whether or not sets even have a biggest or smallest element).</p>
+<div class="callout-note callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-upperbound" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 3 (Upper bound and lower bound) </strong></span>Let <span class="math inline">\(E \subset S\)</span> be an ordered set. If there is an element <span class="math inline">\(\beta \in S\)</span> such that for all <span class="math inline">\(x \in E\)</span> we have <span class="math inline">\(x\leq \beta\)</span>, then <span class="math inline">\(\beta\)</span> is an <strong>upper bound</strong> for <span class="math inline">\(E\)</span>. If <span class="math inline">\(E\)</span> has an upper bound we say that <span class="math inline">\(E\)</span> is <strong>bounded above</strong>. </p>
+<p>Similarly, we can define a <strong>lower bound</strong> and <strong>bounded below.</strong></p>
+</div>
+</div>
+</div>
+</div>
+<div class="no-row-height column-margin column-container"><span class="callout-margin-content callout-margin-content-simple">Notice that <span class="math inline">\(\beta\)</span> does not need to be in the set to be an upper bound for the set.</span></div><div class="callout-important callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+In-class activity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In class, we will find an upper bound for a given set and prove that it is an upper bound.</p>
+</div>
+</div>
+<p>Notice that it might be possible to define many upper bounds for a set. It’s natural to ask whether you could find a smallest one. If a smallest upper bound exists, we’ll call it the <strong>least upper bound</strong> or <strong>supremum</strong> of the set.</p>
+<div class="callout-note callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-supinf" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 4 (Least upper bound/supremum) </strong></span>We again consider <span class="math inline">\(E \subset S.\)</span> If there exists an <span class="math inline">\(\alpha \in S\)</span> such that</p>
+<ol type="1">
+<li><span class="math inline">\(\alpha\)</span> is an upper bound of <span class="math inline">\(E\)</span>, and</li>
+<li>if <span class="math inline">\(\gamma &lt; \alpha\)</span>, then <span class="math inline">\(\gamma\)</span> is not an upper bound of <span class="math inline">\(E\)</span>,</li>
+</ol>
+<p>then we say <span class="math inline">\(\alpha\)</span> is the <strong>least upper bound</strong> or <strong>supremum</strong> of <span class="math inline">\(E\)</span>. We write <span class="math inline">\(\alpha = \sup E.\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<p>Analogously, we can define the <strong>greatest lower bound</strong> or <strong>infimum</strong> of <span class="math inline">\(E\)</span>, which we denote <span class="math inline">\(\inf E.\)</span></p>
+<div class="callout-important callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+In-class activity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In class, we will explore a variety of sets to determine what their suprema are (if they exist).</p>
+</div>
+</div>
+<p><strong>Properties of suprema:</strong></p>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">Here, I will use the shorthand (<span class="math inline">\(\implies\)</span>) for “implies” and (<span class="math inline">\(\iff\)</span>) for “if and only if” (a bidirectional implication).</span></div></div>
+<ul>
+<li><span class="math inline">\(\gamma\)</span> is an upper bound for <span class="math inline">\(A \iff \sup A \leq \gamma.\)</span></li>
+<li>For all <span class="math inline">\(a \in A, a \leq \gamma \iff \sup A \leq \gamma.\)</span></li>
+<li>For all <span class="math inline">\(a \in A, a &lt; \gamma \implies \sup A \leq \gamma.\)</span> (Careful! Notice the inequality here is not strict)</li>
+<li>If <span class="math inline">\(\gamma &lt; \sup A,\)</span> then there exists <span class="math inline">\(a \in A\)</span> such that <span class="math inline">\(\gamma &lt; a \leq \sup A.\)</span></li>
+</ul>
+<div class="callout-note callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="thm-supremaorder" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 1 </strong></span>If <span class="math inline">\(A \subset B\)</span>, and <span class="math inline">\(\sup A\)</span> and <span class="math inline">\(\sup B\)</span> exist, then <span class="math inline">\(\sup A \leq \sup B.\)</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Because <span class="math inline">\(A \subset B\)</span>, we know that for all <span class="math inline">\(a \in A,\)</span> <span class="math inline">\(a\)</span> is also in <span class="math inline">\(B.\)</span> It follows that <span class="math inline">\(a \leq \sup B.\)</span> Thus, by the second property above, <span class="math inline">\(\sup A \leq \sup B.\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<p>To show that two sets have the same supremum, we can use a similar strategy as we would use to show that two sets are the same: we show that <span class="math inline">\(\sup A \leq \sup B\)</span>, and similarly that <span class="math inline">\(\sup B \leq \sup A.\)</span></p>
+</section>
+<section id="completeness-of-mathbbr" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="completeness-of-mathbbr">Completeness of <span class="math inline">\(\mathbb{R}\)</span></h2>
+<p>In this lecture, we’ve encountered some important differences between the infinite sets <span class="math inline">\(\mathbb{N}, \mathbb{Q}, \mathbb{R},\)</span> and <span class="math inline">\(\mathbb{C}.\)</span> The natural numbers aren’t a field, meaning they’re missing some important algebraic structure. All of these sets can be given an order, but the complex numbers aren’t an ordered field.</p>
+<p>What is the distinction between the rationals and the reals? Intuitively, we might think about the rationals as having “gaps” that are “filled in” by the reals: we know that <span class="math inline">\(x^2=2\)</span> does not have a solution in <span class="math inline">\(\mathbb{Q}\)</span>, but it does in <span class="math inline">\(\mathbb{R}.\)</span></p>
+<div class="callout-note callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-name" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 5 (Axiom of Completeness) </strong></span>A set <span class="math inline">\(S\)</span> satisfies the <strong>Axiom of Completeness</strong> or the <strong>least upper bound property</strong> if every nonempty subset of <span class="math inline">\(S\)</span> that has an upper bound has a supremum in <span class="math inline">\(S\)</span>. </p>
+</div>
+</div>
+</div>
+</div>
+<div class="no-row-height column-margin column-container"><span class="callout-margin-content callout-margin-content-simple">We include <em>nonempty</em> because if <span class="math inline">\(E = \emptyset\)</span> then everything is vacuously an upper bound.</span></div><div class="callout-note callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="thm-reals" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 2 (Completeness of the Reals) </strong></span>There exists an ordered field <span class="math inline">\(\mathbb{R}\)</span> which satisfies the completeness axiom that contains <span class="math inline">\(\mathbb{Q}\)</span> as a subfield.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="page-columns page-full"><p>This theorem has some amazing consequences! - We can write any real number as a decimal expansion, for example <span class="math display">\[
+\sqrt{2} = \sup \{1, 1.4, 1.41, 1.414, 1.4142, ...\}
+\]</span> - In the reals, roots exist: We can define <span class="math display">\[
+a^{1/n} \triangleq \sup \{r \in Q: r^n &lt; a\},
+\]</span> provided that <span class="math inline">\(a&gt;0\)</span> if the set is even (so that the set is nonempty). </p><div class="no-row-height column-margin column-container"><span class=""><span class="math inline">\(\triangleq\)</span> means “is defined to be”</span></div></div>
+<p>There are two more nice consequences which we will define and prove in class.</p>
+<div class="callout-important callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+In-class activity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In class, we will prove the <strong>Archimedean Property</strong> of <span class="math inline">\(\mathbb{R}\)</span>, and then use it to show that <span class="math inline">\(\mathbb{Q}\)</span> is dense in <span class="math inline">\(\mathbb{R}.\)</span></p>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
