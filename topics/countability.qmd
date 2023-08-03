@@ -14,6 +14,13 @@ description: "Our objective for this lecture is to develop a rigorous way to dis
 \newcommand{\Z}{\mathbb{Z}}
 :::
 
+## Lecture videos
+
+{{< video https://www.youtube.com/embed/MBml_DJ_r6Q >}}
+{{< video https://www.youtube.com/embed/l_QshvdAeUU >}}
+
+
+## Sets and cardinality
 
 If you want to learn how to count, I think I can point you to no better resource than The Count from Sesame Street:
 {{< video https://www.youtube.com/embed/2AoxCkySv34 >}}
@@ -26,8 +33,6 @@ What is The Count actually doing when he counts? He is assigning a number from t
 ![](../figures/counting-bats.png){width=50%}
 
 In other words, he's mapping the elements of his set (bats) to a subset of the natural numbers.
-
-## Sets and cardinality
 
 ::: {.callout-note icon=false appearance="minimal"}
 ::: {#def-cardinality}

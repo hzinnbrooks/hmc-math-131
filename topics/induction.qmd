@@ -13,6 +13,10 @@ $$
 $$
 :::
 
+## Lecture video
+
+{{< video https://www.youtube.com/embed/eBUQeS7b3N4 >}}
+
 ## The natural numbers 
 
 What are the natural numbers? We can intuitively think of this set as the 'counting numbers'  $\N = \{1, 2, 3, \dots \}$. A set of axioms for the natural numbers comes from Giuseppe Peano (1889).

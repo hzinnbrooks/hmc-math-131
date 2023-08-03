@@ -140,6 +140,13 @@
     "text": "\\[\n\\def\\N{{\\mathbb{N}}}\n\\]"
   },
   {
+    "objectID": "topics/induction.html#lecture-video",
+    "href": "topics/induction.html#lecture-video",
+    "title": "Lecture 2: Induction",
+    "section": "Lecture video",
+    "text": "Lecture video"
+  },
+  {
     "objectID": "topics/induction.html#the-natural-numbers",
     "href": "topics/induction.html#the-natural-numbers",
     "title": "Lecture 2: Induction",
@@ -168,18 +175,18 @@
     "text": "Style tips for proof by induction\n\nAt the beginning of your proof, inform your reader that it’s a proof by induction on ___, where you fill in the blank with your variable that will serve as an index.\nSeparate out your hypotheses: tell your reader when you’re doing the base case and when you’re doing the inductive step. Make your inductive hypothesis clear.\nRemind your reader of the conclusion at the end.\n\n\n\n\n\n\n\nIn-class activity\n\n\n\nIn some examples in lecture, we’ll put these style tips into practice."
   },
   {
-    "objectID": "topics/countability.html",
-    "href": "topics/countability.html",
+    "objectID": "topics/countability.html#lecture-videos",
+    "href": "topics/countability.html#lecture-videos",
     "title": "Lecture 3: Countability",
-    "section": "",
-    "text": "If you want to learn how to count, I think I can point you to no better resource than The Count from Sesame Street:\nWhat is The Count actually doing when he counts? He is assigning a number from the set we described last class, the natural numbers \\(\\mathbb{N}\\), to each object. He is doing this in a systematic way, so that\nIn other words, he’s mapping the elements of his set (bats) to a subset of the natural numbers."
+    "section": "Lecture videos",
+    "text": "Lecture videos"
   },
   {
     "objectID": "topics/countability.html#sets-and-cardinality",
     "href": "topics/countability.html#sets-and-cardinality",
     "title": "Lecture 3: Countability",
     "section": "Sets and cardinality",
-    "text": "Sets and cardinality\n\n\n\n\n\n\n\nDefinition 1 (Cardinality) Suppose \\(J_n = \\{1, 2, \\dots, n\\} \\subset \\mathbb{N}.\\) Then, if \\(A\\) is in one-to-one correspondence with \\(J_n\\), then \\(A\\) cardinality \\(n\\) (equivalently \\(A\\) is size \\(n\\)). We denote this \\[\\vert A \\vert = n.\\]\nIf \\(A\\) contains no elements, then it is not in one-to-one correspondence with any subset of \\(\\mathbb{N}\\); it is the empty set \\(\\emptyset\\) and \\(\\vert A \\vert = 0.\\)\n\n\n\n\nExample. Consider the set \\(A = \\{ 1, \\Delta, \\Pi, \\square \\}\\). We can create a bijection between \\(A\\) and \\(J_4\\), as follows: \\[\\begin{align*}\n    1 &\\mapsto 1 \\\\\n    \\Delta &\\mapsto 2 \\\\\n    \\Pi &\\mapsto 3 \\\\\n    \\square &\\mapsto 4 \\,\n\\end{align*}\\] Because we have created a bijection between our set and \\(J_4\\), we say that \\(\\vert A \\vert = 4.\\)\nUnfortunately (or perhaps fortunately?), it is not possible to assign every set a natural number in this way.\n\n\n\n\n\n\n\nDefinition 2 (Finite and infinite) We say a set is finite is \\(A\\) is in one-to-one correspondence with \\(J_n.\\) Otherwise, we say \\(A\\) is infinite."
+    "text": "Sets and cardinality\nIf you want to learn how to count, I think I can point you to no better resource than The Count from Sesame Street:\n\nWhat is The Count actually doing when he counts? He is assigning a number from the set we described last class, the natural numbers \\(\\mathbb{N}\\), to each object. He is doing this in a systematic way, so that\n\nEach element will be included, and\nEach element is included only once.\n\n\nIn other words, he’s mapping the elements of his set (bats) to a subset of the natural numbers.\n\n\n\n\n\n\n\nDefinition 1 (Cardinality) Suppose \\(J_n = \\{1, 2, \\dots, n\\} \\subset \\mathbb{N}.\\) Then, if \\(A\\) is in one-to-one correspondence with \\(J_n\\), then \\(A\\) cardinality \\(n\\) (equivalently \\(A\\) is size \\(n\\)). We denote this \\[\\vert A \\vert = n.\\]\nIf \\(A\\) contains no elements, then it is not in one-to-one correspondence with any subset of \\(\\mathbb{N}\\); it is the empty set \\(\\emptyset\\) and \\(\\vert A \\vert = 0.\\)\n\n\n\n\nExample. Consider the set \\(A = \\{ 1, \\Delta, \\Pi, \\square \\}\\). We can create a bijection between \\(A\\) and \\(J_4\\), as follows: \\[\\begin{align*}\n    1 &\\mapsto 1 \\\\\n    \\Delta &\\mapsto 2 \\\\\n    \\Pi &\\mapsto 3 \\\\\n    \\square &\\mapsto 4 \\,\n\\end{align*}\\] Because we have created a bijection between our set and \\(J_4\\), we say that \\(\\vert A \\vert = 4.\\)\nUnfortunately (or perhaps fortunately?), it is not possible to assign every set a natural number in this way.\n\n\n\n\n\n\n\nDefinition 2 (Finite and infinite) We say a set is finite is \\(A\\) is in one-to-one correspondence with \\(J_n.\\) Otherwise, we say \\(A\\) is infinite."
   },
   {
     "objectID": "topics/countability.html#countable-sets",
