@@ -1,5 +1,17 @@
 ---
-title: "About"
+title: "About This Course"
 ---
 
-About this site
+## How to navigate this course
+
+
+
+## About me
+
+I am an assistant professor of mathematics at Harvey Mudd College in Claremont, CA. I specialize in applied dynamical systems and networks.
+
+![](../figures/heather.png){width=50%}
+
+My website is [here](https://sites.google.com/g.hmc.edu/hzinnbrooks).
+
+

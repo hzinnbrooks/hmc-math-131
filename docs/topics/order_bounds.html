@@ -110,6 +110,11 @@ ul.task-list li input[type="checkbox"] {
   <a href="../assignments.html" class="sidebar-item-text sidebar-link">Assignments</a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../about.html" class="sidebar-item-text sidebar-link">About This Course</a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -119,7 +124,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#order" id="toc-order" class="nav-link active" data-scroll-target="#order">Order</a></li>
+  <li><a href="#lecture-videos" id="toc-lecture-videos" class="nav-link active" data-scroll-target="#lecture-videos">Lecture Videos</a></li>
+  <li><a href="#order" id="toc-order" class="nav-link" data-scroll-target="#order">Order</a></li>
   <li><a href="#fields-and-ordered-fields" id="toc-fields-and-ordered-fields" class="nav-link" data-scroll-target="#fields-and-ordered-fields">Fields and Ordered Fields</a></li>
   <li><a href="#least-upper-bounds-and-greatest-lower-bounds" id="toc-least-upper-bounds-and-greatest-lower-bounds" class="nav-link" data-scroll-target="#least-upper-bounds-and-greatest-lower-bounds">Least Upper Bounds and Greatest Lower Bounds</a></li>
   <li><a href="#completeness-of-mathbbr" id="toc-completeness-of-mathbbr" class="nav-link" data-scroll-target="#completeness-of-mathbbr">Completeness of <span class="math inline">\(\mathbb{R}\)</span></a></li>
@@ -166,6 +172,11 @@ ul.task-list li input[type="checkbox"] {
 <div class="hidden">
 
 </div>
+<section id="lecture-videos" class="level2">
+<h2 class="anchored" data-anchor-id="lecture-videos">Lecture Videos</h2>
+<div class="quarto-video ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/iAJLebUUztw" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<div class="quarto-video ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/h3UxjI8mr3g" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</section>
 <section id="order" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="order">Order</h2>
 <p>If we want an intuitive notion of order on our set, it turns out we need it to satisfy just a few properties, which we define below.</p>
@@ -324,6 +335,21 @@ In-class activity
 <p>In class, we will explore a variety of sets to determine what their suprema are (if they exist).</p>
 </div>
 </div>
+<div class="callout-warning callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Supremum and maximum are not the same thing. An element <span class="math inline">\(\alpha\)</span> is the <strong>maximum</strong> of a set <span class="math inline">\(E\)</span> if <span class="math inline">\(x \leq \alpha\)</span> for all <span class="math inline">\(x \in E\)</span> and <em>it is an element of</em> <span class="math inline">\(E\)</span>.</p>
+</div>
+</div>
+<p>That is, if the maximum exists, it is the supremum, but a set can have a supremum but no maximum.</p>
+<p><strong>Example.</strong> Consider the sets <span class="math inline">\(\{x \in \mathbb{R}: x &lt; 0\}\)</span> and <span class="math inline">\(\{x \in \mathbb{R}: x \leq 0\}.\)</span> Zero is the supremum of both sets, but only the second set has zero as a maximum because zero is included in the set.</p>
 <p><strong>Properties of suprema:</strong></p>
 <div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">Here, I will use the shorthand (<span class="math inline">\(\implies\)</span>) for “implies” and (<span class="math inline">\(\iff\)</span>) for “if and only if” (a bidirectional implication).</span></div></div>
 <ul>
@@ -351,8 +377,7 @@ In-class activity
 </section>
 <section id="completeness-of-mathbbr" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="completeness-of-mathbbr">Completeness of <span class="math inline">\(\mathbb{R}\)</span></h2>
-<p>In this lecture, we’ve encountered some important differences between the infinite sets <span class="math inline">\(\mathbb{N}, \mathbb{Q}, \mathbb{R},\)</span> and <span class="math inline">\(\mathbb{C}.\)</span> The natural numbers aren’t a field, meaning they’re missing some important algebraic structure. All of these sets can be given an order, but the complex numbers aren’t an ordered field.</p>
-<p>What is the distinction between the rationals and the reals? Intuitively, we might think about the rationals as having “gaps” that are “filled in” by the reals: we know that <span class="math inline">\(x^2=2\)</span> does not have a solution in <span class="math inline">\(\mathbb{Q}\)</span>, but it does in <span class="math inline">\(\mathbb{R}.\)</span></p>
+<p>As we’ll show in class, not every set that has an upper bound has a supremum.</p>
 <div class="callout-note callout callout-style-simple no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -365,7 +390,9 @@ In-class activity
 </div>
 </div>
 </div>
-<div class="no-row-height column-margin column-container"><span class="callout-margin-content callout-margin-content-simple">We include <em>nonempty</em> because if <span class="math inline">\(E = \emptyset\)</span> then everything is vacuously an upper bound.</span></div><div class="callout-note callout callout-style-simple no-icon">
+<div class="no-row-height column-margin column-container"><span class="callout-margin-content callout-margin-content-simple">We include <em>nonempty</em> because if <span class="math inline">\(E = \emptyset\)</span> then everything is vacuously an upper bound.</span></div><p>In this lecture, we’ve encountered some important differences between the infinite sets <span class="math inline">\(\mathbb{N}, \mathbb{Q}, \mathbb{R},\)</span> and <span class="math inline">\(\mathbb{C}.\)</span> The natural numbers aren’t a field, meaning they’re missing some important algebraic structure. All of these sets can be given an order, but the complex numbers aren’t an ordered field.</p>
+<p>What is the distinction between the rationals and the reals? Intuitively, we might think about the rationals as having “gaps” that are “filled in” by the reals: we know that <span class="math inline">\(x^2=2\)</span> does not have a solution in <span class="math inline">\(\mathbb{Q}\)</span>, but it does in <span class="math inline">\(\mathbb{R}.\)</span> This is because <span class="math inline">\(\mathbb{R}\)</span> satisfies the axiom of completeness.</p>
+<div class="callout-note callout callout-style-simple no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -377,12 +404,16 @@ In-class activity
 </div>
 </div>
 </div>
-<div class="page-columns page-full"><p>This theorem has some amazing consequences! - We can write any real number as a decimal expansion, for example <span class="math display">\[
+<p>We will save a more rigorous construction of <span class="math inline">\(\mathbb{R}\)</span> for later in the course, but for now we will appreciate some amazing consequences of this theorem, which we explore further in class.</p>
+<ul>
+<li>We can write any real number as a decimal expansion, for example <span class="math display">\[
 \sqrt{2} = \sup \{1, 1.4, 1.41, 1.414, 1.4142, ...\}
-\]</span> - In the reals, roots exist: We can define <span class="math display">\[
+\]</span></li>
+<li>In the reals, roots exist: We can define <span class="math display">\[
 a^{1/n} \triangleq \sup \{r \in Q: r^n &lt; a\},
-\]</span> provided that <span class="math inline">\(a&gt;0\)</span> if the set is even (so that the set is nonempty). </p><div class="no-row-height column-margin column-container"><span class=""><span class="math inline">\(\triangleq\)</span> means “is defined to be”</span></div></div>
-<p>There are two more nice consequences which we will define and prove in class.</p>
+\]</span> provided that <span class="math inline">\(a&gt;0\)</span> if the set is even (so that the set is nonempty). </li>
+</ul>
+<div class="no-row-height column-margin column-container"><span class=""><span class="math inline">\(\triangleq\)</span> means “is defined to be”</span></div><p>There are two more nice consequences which we will define and prove in class.</p>
 <div class="callout-important callout callout-style-simple no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">

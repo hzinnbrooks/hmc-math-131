@@ -15,6 +15,11 @@ description: "So far we've met some interesting infinite sets, including the nat
 \newcommand{\C}{\mathbb{C}}
 :::
 
+## Lecture Videos
+
+{{< video https://www.youtube.com/embed/iAJLebUUztw >}}
+{{< video https://www.youtube.com/embed/h3UxjI8mr3g >}}
+
 ## Order
 
 If we want an intuitive notion of order on our set, it turns out we need it to satisfy just a few properties, which we define below.
@@ -136,6 +141,14 @@ Analogously, we can define the **greatest lower bound** or **infimum** of $E$, w
 In class, we will explore a variety of sets to determine what their suprema are (if they exist).
 :::
 
+::: {.callout-warning icon=false}
+Supremum and maximum are not the same thing. An element $\alpha$ is the **maximum** of a set $E$ if $x \leq \alpha$ for all $x \in E$ and *it is an element of* $E$. 
+:::
+
+That is, if the maximum exists, it is the supremum, but a set can have a supremum but no maximum.
+
+**Example.** Consider the sets $\{x \in \R: x < 0\}$ and $\{x \in \R: x \leq 0\}.$ Zero is the supremum of both sets, but only the second set has zero as a maximum because zero is included in the set.
+
 **Properties of suprema:**
 
 [Here, I will use the shorthand ($\implies$) for "implies" and ($\iff$) for "if and only if" (a bidirectional implication).]{.aside}
@@ -159,9 +172,7 @@ To show that two sets have the same supremum, we can use a similar strategy as w
 
 ## Completeness of $\R$
 
-In this lecture, we've encountered some important differences between the infinite sets $\N, \Q, \R,$ and $\C.$ The natural numbers aren't a field, meaning they're missing some important algebraic structure. All of these sets can be given an order, but the complex numbers aren't an ordered field.
-
-What is the distinction between the rationals and the reals? Intuitively, we might think about the rationals as having "gaps" that are "filled in" by the reals: we know that $x^2=2$ does not have a solution in $\Q$, but it does in $\R.$ 
+As we'll show in class, not every set that has an upper bound has a supremum. 
 
 ::: {.callout-note icon=false appearance="minimal"}
 ::: {#def-name}
@@ -170,6 +181,10 @@ A set $S$ satisfies the **Axiom of Completeness** or the **least upper bound pro
 :::
 :::
 
+In this lecture, we've encountered some important differences between the infinite sets $\N, \Q, \R,$ and $\C.$ The natural numbers aren't a field, meaning they're missing some important algebraic structure. All of these sets can be given an order, but the complex numbers aren't an ordered field.
+
+What is the distinction between the rationals and the reals? Intuitively, we might think about the rationals as having "gaps" that are "filled in" by the reals: we know that $x^2=2$ does not have a solution in $\Q$, but it does in $\R.$ This is because $\R$ satisfies the axiom of completeness.
+
 ::: {.callout-note icon=false appearance="minimal"}
 ::: {#thm-reals}
 ## Completeness of the Reals
@@ -177,7 +192,8 @@ There exists an ordered field $\R$ which satisfies the completeness axiom that c
 :::
 :::
 
-This theorem has some amazing consequences!
+We will save a more rigorous construction of $\R$ for later in the course, but for now we will appreciate some amazing consequences of this theorem, which we explore further in class.
+
 - We can write any real number as a decimal expansion, for example
 $$
 \sqrt{2} = \sup \{1, 1.4, 1.41, 1.414, 1.4142, ...\}

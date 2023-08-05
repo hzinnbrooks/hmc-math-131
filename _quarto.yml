@@ -17,6 +17,7 @@ website:
       - syllabus.qmd
       - schedule.qmd
       - assignments.qmd
+      - about.qmd
 
 
 format:
