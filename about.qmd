@@ -4,13 +4,33 @@ title: "About This Course"
 
 ## How to navigate this course
 
+Important information regarding policies, resources, and grading can be found on the [syllabus](https://hzinnbrooks.github.io/hmc-math-131/syllabus.html).
 
+Success in this course requires engagement with the material synchronously during class time as well as asynchronously outside of the classroom. 
+
+Follow the steps below to navigate the course.
+
+1. **Read lectures (and/or watch video) before class.**
+
+For each in-class day, there is an associated set of [lecture notes](https://hzinnbrooks.github.io/hmc-math-131/schedule.html) along with a video covering the material.
+
+You should read and/or watch this material **before** the list lecture day. You will need this material to engage with our in-class work. 
+
+Both the written notes and the video notes cover similar material; I recommend you try both and use whichever modality or combination of modalities is most effective for you.
+
+2. **Attend lectures in-person on Monday and Wednesday.**
+
+The in-class material will *not* be the same as what is in the pre-requisite notes and videos. Lecture attendance is required and is an important part of the learning process.
+
+3. **Complete the associated homework assignments**
+
+Once you have attended the in-class portion, you are ready to complete the [homework assignments](https://hzinnbrooks.github.io/hmc-math-131/assignments.html) on those topics.
+
+Reading the corresponding section in the Rudin textbook is helpful in completing these assignments. You may use and cite theorems and results from Rudin your homework proofs. You are strongly encouraged to work together and to attend office hours and grutoring hours to help complete your assignments!
 
 ## About me
 
 I am an assistant professor of mathematics at Harvey Mudd College in Claremont, CA. I specialize in applied dynamical systems and networks.
-
-![](../figures/heather.png){width=50%}
 
 My website is [here](https://sites.google.com/g.hmc.edu/hzinnbrooks).
 

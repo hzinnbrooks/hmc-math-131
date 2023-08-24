@@ -30,7 +30,7 @@ The textbook is *Principles of Mathematical Analysis* by Walter Rudin.
 
 We will be using a variety of online tools to supplement the lecture material for this course:
 
-- Our main course hub is here on this site. You will find links to access all lecture videos, lecture notes, and other course materials here. Lecture videos will also be posted on Youtube. You can also find links for Gradescope on our Sakai/Canvas page.
+- Our main course hub is here on this site. You will find links to access all lecture videos, lecture notes, and other course materials here. Lecture videos will also be posted on Youtube. You can also find links for Gradescope on our Canvas page.
 - I will post coursework here under the Assignments link and on Gradescope, and we will use Gradescope to submit coursework.
 - I will send announcements via email, and I am available to message via email any time.
 
@@ -89,12 +89,13 @@ These will be regarded as a violation of the HMC Honor Code and will be handled 
 ## Grading and Assessment
 The coursework that you do in Math 131 contributes to your overall course grade, which we will use to ultimately assign you a letter grade. Your overall course grade will be calculated as follows:
 
+- 5% attendance
 - 20% homework assignments 
 - 5% project
 - 20% midterm exam 1
 - 20% midterm exam 2
 - 20% final exam
-- The highest exam score of midterm 1, midterm 2, or final will contribute an additional 15%
+- The highest exam score of midterm 1, midterm 2, or final will contribute an additional 10%.
 
 Grades will be assigned on a straight scale based on your overall percentage as calculated above. I commit to honor the following minimum cutoffs:
 
@@ -104,6 +105,12 @@ Grades will be assigned on a straight scale based on your overall percentage as 
 - 64% or higher guarantees (at least) a D.
 
 Remember that your grade in this course (and any other course, for that matter) is only a measurement of your learning at one moment in time. It is never a measure of your potential ability or your worth!
+
+### Attendance
+
+You will be expected to attend the in-class lectures regularly and to complete the assigned reading/videos before coming to lecture. To account for illness, travel, and other contingencies, you may miss up to 3 lecture days without penalty, no questions asked. You do not need to email the professor when using these "days off." 
+
+If you require to miss class for more than three days for extenuating circumstances (e.g., prolonged illness or family emergency), you should contact the DSA staff and I will work in consultation with DSA to make a plan for your situation. 
 
 ### Homework
 Homework assignments serve several important purposes, including to further familiarize you with the course material, practice mathematical techniques, provide challenges in creative problem solving, and improve your mathematical writing skills and style. 
@@ -125,8 +132,8 @@ If you require extensions for extenuating circumstances (e.g., prolonged illness
 ### Exams
 Exams are an opportunity for you to review and synthesize your learning, demonstrate your proficiency with the material, and assess your progress. Further information about exams is forthcoming.
 
-- **Midterm 1**: TBA
-- **Midterm 2**: TBA
+- **Midterm 1**: Monday October 9
+- **Midterm 2**: Monday November 13
 - **Final**: TBA
 
 ### Project

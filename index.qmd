@@ -2,8 +2,6 @@
 title: "Math 131: Mathematical Analysis"
 ---
 
-Welcome to Math 131: Mathematical Analysis at Harvey Mudd College. This page is under construction.
-
 **Instructor**: Dr. Heather Zinn Brooks ("Prof. Heather")
 
 **Email**: hzinnbrooks (at) g.hmc.edu
